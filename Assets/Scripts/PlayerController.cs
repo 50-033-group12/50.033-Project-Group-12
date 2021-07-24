@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Finding weapon by name, can be changed later
-        weapon = this.transform.Find("Weapon").gameObject.GetComponent<IWeapon>();
+        // // Finding weapon by name, can be changed later
+        // weapon = this.transform.Find("Weapon").gameObject.GetComponent<IWeapon>();
+    
+        weapon = GetComponentInChildren<IWeapon>();
+        
     }
 
     // Update is called once per frame

@@ -9,3 +9,8 @@ public interface IWeapon
     void GetCooldown();
     void GetAmmo();
 }
+
+public interface IDamageable
+{
+    void getDamaged();
+}
