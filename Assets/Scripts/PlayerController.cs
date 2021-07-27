@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float rotationSpeed;
     public float movementSpeed;
-    public IWeapon weapon;
+    public PrimaryWeapon weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
         // // Finding weapon by name, can be changed later
         // weapon = this.transform.Find("Weapon").gameObject.GetComponent<IWeapon>();
     
-        weapon = GetComponentInChildren<IWeapon>();
+        weapon = GetComponentInChildren<PrimaryWeapon>();
         
     }
 
@@ -33,12 +33,7 @@ public class PlayerController : MonoBehaviour
 
         // Shoot button
         if(Input.GetKeyDown("mouse 0")){
-            weapon.Fire();
-        }
-
-        // Reload button
-        if(Input.GetKeyDown(KeyCode.R)){
-            weapon.Reload();
+            weapon.OnFire();
         }
     }
 }

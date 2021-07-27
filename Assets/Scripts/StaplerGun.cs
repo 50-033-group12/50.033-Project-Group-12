@@ -2,24 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaplerGun : MonoBehaviour, IWeapon
+public class StaplerGun : ClippedPrimaryWeapon
 {
     public GameObject bullet;
-    public float bulletSpeed;
-    private int ammo = 10;
-    private int clip;
-    public float fireRate = 0.5f;
-    private float nextShot;
-    private float rotationSpeed = 10f;
-    private GameObject target;
+    public float bulletSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextShot = Time.time;
-        clip = ammo;
-        // MANUAL FINDING BY NAME
-        target = this.transform.Find("Target").gameObject;
+        nextFire = Time.time;
+        Reload();
     }
 
     // Update is called once per frame
@@ -28,76 +20,58 @@ public class StaplerGun : MonoBehaviour, IWeapon
         
     }
 
+    public override void OnFire()
+    {
+        Fire(this.transform);
+    }
+
     void FixedUpdate () 
 	{
-    	// Generate a plane that intersects the transform's position with an upwards normal.
     	Plane playerPlane = new Plane(Vector3.up, transform.position);
- 
-    	// Generate a ray from the cursor position
     	Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
- 
-    	// Determine the point where the cursor ray intersects the plane.
-    	// This will be the point that the object must look towards to be looking at the mouse.
-    	// Raycasting to a Plane object only gives us a distance, so we'll have to take the distance,
-    	//   then find the point along that ray that meets that distance.  This will be the point
-    	//   to look at.
     	float hitdist = 0.0f;
-    	// If the ray is parallel to the plane, Raycast will return false.
     	if (playerPlane.Raycast (ray, out hitdist)) 
 		{
         	// Get the point along the ray that hits the calculated distance.
         	Vector3 targetPoint = ray.GetPoint(hitdist);
- 
-        	// Determine the target rotation.  This is the rotation if the transform looks at the target point.
-        	Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
- 
-        	// Smoothly rotate towards the target point.
-        	transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        	LookAt(targetPoint);
 		}
     }
 
-    Vector3 calcBallisticVelocityVector(Transform source, Transform target, float angle)
-    {
-        Vector3 direction = target.position - source.position;            // get target direction
-        float h = direction.y;                                            // get height difference
-        direction.y = 0;                                                  // remove height
-        float distance = direction.magnitude;                             // get horizontal distance
-        float a = angle * Mathf.Deg2Rad;                                  // Convert angle to radians
-        direction.y = distance * Mathf.Tan(a);                            // Set direction to elevation angle
-        distance += h/Mathf.Tan(a);                                       // Correction for small height differences
-        // calculate velocity
-        float velocity = Mathf.Sqrt(distance * Physics.gravity.magnitude / Mathf.Sin(2*a));
-        return velocity * direction.normalized;
+    public override void LookAt(Vector3 target){
+        // Determine the target rotation.  This is the rotation if the transform looks at the target point.
+        Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
+
+        // Smoothly rotate towards the target point.
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, GetTurnRate() * Time.deltaTime);
     }
 
-    // Required method for IWeapon interface
-    public void Fire(){
-        if(Time.time > nextShot && clip > 0){
+    public override void Fire(Transform target){
+        if(IsReadyToFire() && GetClipRemaining() > 0){
             // Instantiate bullet
-            GameObject bulletShot = Instantiate(bullet, this.transform.position, Quaternion.identity);
-
-            // Add impulse to propel it forward
-            // transform.right is bcs of where the model is facing, adjust later
+            GameObject bulletShot = Instantiate(bullet, target.position, target.rotation);
             
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
-            Vector3 vel = calcBallisticVelocityVector(this.transform, target.transform, 15f);
-            // Debug.Log(vel);
-            m_Rigidbody.velocity = vel;
-
-            clip--;
-            nextShot = Time.time + fireRate;
+            m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
+            
+            nextFire = Time.time + GetFireRate();
+            base.FireAt(target);
         }
     }
 
-    public void Reload(){
-        clip = ammo;
+    public override float GetFireRate()
+    {
+        return 0.7f;
     }
 
-    public void GetCooldown(){
-        Debug.Log("getcooldown called");
+    public override float GetTurnRate()
+    {
+        return 3f;
     }
 
-    public void GetAmmo(){
-        Debug.Log("getammo called");
+    public override int GetClipSize()
+    {
+        return 10;
     }
+
 }

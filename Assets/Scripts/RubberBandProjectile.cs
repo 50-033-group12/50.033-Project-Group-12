@@ -16,6 +16,7 @@ public class RubberBandProjectile : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider col){
+        collission();
         if(col.tag == "Ground" || col.tag == "Obstacles"){
             Destroy(gameObject);
         }
@@ -23,5 +24,9 @@ public class RubberBandProjectile : MonoBehaviour
 
     void OnBecameInvisible(){
         Destroy(gameObject);
+    }
+
+    public void collission(){
+        Debug.Log("Collision behaviour here");
     }
 }

@@ -14,3 +14,9 @@ public interface IDamageable
 {
     void getDamaged();
 }
+
+public interface AmmoSource
+{
+    int GetCount();
+    void Consume(int amount);
+}
