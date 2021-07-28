@@ -9,10 +9,19 @@ public abstract class ClippedPrimaryWeapon : PrimaryWeapon
         return clipRemaining;
     }
     public abstract int GetClipSize();
-
     public void Reload(){
-        // ammoSource.Consume(GetClipSize());
-        clipRemaining = GetClipSize();
+        // if ammosource has enough to replenish the used up bullets, replenish
+        if(ammoSource.GetCount() >= (GetClipSize() - clipRemaining))
+        {
+            ammoSource.Consume(GetClipSize() - clipRemaining);
+            clipRemaining = GetClipSize();
+        }
+
+        //else do nothing
+        else{
+            Debug.Log("Ammo source is not enough!");
+        }
+        
     }
 
     public void FireAt(Transform target){
