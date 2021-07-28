@@ -23,6 +23,7 @@ public class Tank : MonoBehaviour
 
     AmmoSource ammoSource;
     PrimaryWeapon weapon;
+    UltimateWeapon ultimateWeapon;
     Rigidbody rigidBody;
     
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class Tank : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         ammoSource = new ReplenishableAmmoSource(100);
         weapon = this.transform.GetComponentInChildren<PrimaryWeapon>();
+        ultimateWeapon = this.transform.GetComponentInChildren<UltimateWeapon>();
         weapon.SetAmmoSource(ammoSource);
     }
 
@@ -55,6 +57,7 @@ public class Tank : MonoBehaviour
             }
         }
         weapon.LookAt(crosshair.transform.position);
+        ultimateWeapon.LookAt(crosshair.transform.position);
     }
 
     public void ThrottleTank(InputAction.CallbackContext value)
@@ -99,8 +102,7 @@ public class Tank : MonoBehaviour
 
     public void FireUltimate(InputAction.CallbackContext value)
     {
-        Debug.Log("ultimate");
-        // todo
+        ultimateWeapon.FireAt(crosshair.transform);
     }
 
     public void ReloadPrimary(InputAction.CallbackContext value)

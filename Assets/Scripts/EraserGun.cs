@@ -20,7 +20,7 @@ public class EraserGun : PrimaryWeapon
 
     public Vector3 calcBallisticVelocityVector(Transform source, Transform target, float angle)
     {
-        Vector3 direction = target.position - source.position;                     // get target direction
+        Vector3 direction = target.position - source.position;            // get target direction
         float h = direction.y;                                            // get height difference
         direction.y = 0;                                                  // remove height
         float distance = direction.magnitude;                             // get horizontal distance
