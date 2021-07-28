@@ -17,8 +17,7 @@ public abstract class PrimaryWeapon : MonoBehaviour
         }
         return false;
     }
-    public abstract void OnFire();
-    public abstract void Fire(Transform target);
+    public abstract void FireAt(Transform target);
     public abstract void LookAt(Vector3 target);
     public abstract float GetFireRate();
     public abstract float GetTurnRate();

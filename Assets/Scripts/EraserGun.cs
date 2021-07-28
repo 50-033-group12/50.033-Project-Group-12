@@ -4,41 +4,18 @@ using UnityEngine;
 
 public class EraserGun : PrimaryWeapon
 {
-    private GameObject targetObject;
     public GameObject bullet;
     
     // Start is called before the first frame update
     void Start()
     {
         nextFire = Time.time;
-
-        // MANUAL FINDING BY NAME
-        targetObject = this.transform.Find("Target").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public override void OnFire()
-    {
-        Fire(targetObject.transform);
-    }
-
-    // To rotate the weapon
-    void FixedUpdate () 
-	{
-    	Plane playerPlane = new Plane(Vector3.up, transform.position);
-    	Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-    	float hitdist = 0.0f;
-    	if (playerPlane.Raycast (ray, out hitdist)) 
-		{
-        	// Get the point along the ray that hits the calculated distance.
-        	Vector3 targetPoint = ray.GetPoint(hitdist);
-        	LookAt(targetPoint);
-		}
     }
 
     public Vector3 calcBallisticVelocityVector(Transform source, Transform target, float angle)
@@ -55,7 +32,7 @@ public class EraserGun : PrimaryWeapon
         return velocity * direction.normalized;
     }
 
-    public override void Fire(Transform target){
+    public override void FireAt(Transform target){
         if(IsReadyToFire()){
             // Instantiate bullet
             GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);

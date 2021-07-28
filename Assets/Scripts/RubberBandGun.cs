@@ -20,24 +20,6 @@ public class RubberBandGun : ClippedPrimaryWeapon
         
     }
 
-    public override void OnFire()
-    {
-        Fire(this.transform);
-    }
-
-    void FixedUpdate () 
-	{
-    	Plane playerPlane = new Plane(Vector3.up, transform.position);
-    	Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-    	float hitdist = 0.0f;
-    	if (playerPlane.Raycast (ray, out hitdist)) 
-		{
-        	// Get the point along the ray that hits the calculated distance.
-        	Vector3 targetPoint = ray.GetPoint(hitdist);
-        	LookAt(targetPoint);
-		}
-    }
-
     public override void LookAt(Vector3 target){
         // Determine the target rotation.  This is the rotation if the transform looks at the target point.
         Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
@@ -46,10 +28,10 @@ public class RubberBandGun : ClippedPrimaryWeapon
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, GetTurnRate() * Time.deltaTime);
     }
 
-    public override void Fire(Transform target){
+    public override void FireAt(Transform target){
         if(IsReadyToFire() && GetClipRemaining() > 0){
             // Instantiate bullet
-            GameObject bulletShot = Instantiate(bullet, target.position, target.rotation);
+            GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
             
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);

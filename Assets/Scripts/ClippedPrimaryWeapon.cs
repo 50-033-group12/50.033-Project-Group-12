@@ -24,7 +24,7 @@ public abstract class ClippedPrimaryWeapon : PrimaryWeapon
         
     }
 
-    public void FireAt(Transform target){
+    public override void FireAt(Transform target){
         clipRemaining -= 1;
     }
 }

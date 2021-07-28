@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,8 +33,8 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0, rotation, 0);
 
         // Shoot button
-        if(Input.GetKeyDown("mouse 0")){
-            weapon.OnFire();
-        }
+        // if(Input.GetKeyDown("mouse 0")){
+        //     weapon.OnFire();
+        // }
     }
 }
