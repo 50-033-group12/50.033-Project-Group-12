@@ -53,24 +53,17 @@ public class DebuffableProperty<T>
     {
         // remove cancelled debuffs
         _debuffs.RemoveAll(d => d.IsCancelled());
-        var iter = _debuffs.GetEnumerator();
         var value = _initialValue;
-        do
+        foreach(var debuff in _debuffs)
         {
-            if (iter.Current == null)
-            {
-                break;
-            }
-
-            (T newValue, bool stop) = iter.Current.DebuffFunction(value);
+            
+            (T newValue, bool stop) = debuff.DebuffFunction(value);
             value = newValue;
             if (stop)
             {
                 break;
             }
-        } while (iter.MoveNext());
-
-        iter.Dispose();
+        }
         return value;
     }
 

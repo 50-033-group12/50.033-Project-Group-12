@@ -55,14 +55,13 @@ public class Tank : MonoBehaviour, IDebuffable
         weapon = this.transform.GetComponentInChildren<PrimaryWeapon>();
         ultimateWeapon = this.transform.GetComponentInChildren<UltimateWeapon>();
         weapon.SetAmmoSource(ammoSource);
-        AddDebuff<float>(DebuffableProperties.ROTATION_SPEED, new SlowDebuff());
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isMoving){
-            transform.Translate(-moveVal * 6f * Time.deltaTime, 0 ,0);
+            transform.Translate(-moveVal * maxSpeed.GetFinalValue() * Time.deltaTime, 0 ,0);
         }
 
         if(isRotating){
