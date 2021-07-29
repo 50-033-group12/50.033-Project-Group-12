@@ -5,7 +5,7 @@ using UnityEngine;
 public class G2PenGun : UltimateWeapon
 {
     public GameObject bullet;
-    public float bulletSpeed = 15f;
+    public float bulletSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class G2PenGun : UltimateWeapon
     public override void FireAt(Transform target){
         if(IsReadyToFire()){
             // Instantiate bullet
-            GameObject bulletShot = Instantiate(bullet, this.transform.position, Quaternion.Euler(0,this.transform.rotation.y,-90f));
+            GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
             
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);

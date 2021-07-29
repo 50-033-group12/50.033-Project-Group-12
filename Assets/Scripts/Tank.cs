@@ -1,26 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Tank : MonoBehaviour
+class SlowDebuff : Debuff<float>
+{
+    public override (float, bool) DebuffFunction(float input)
+    {
+        return (input * 0.5f, false);
+    }
+
+    public override string GetName()
+    {
+        return "test";
+    }
+
+    public override bool IsStackable()
+    {
+        return false;
+    }
+}
+public class Tank : MonoBehaviour, IDebuffable
 {
     // Movement
     public bool isMoving = false;
     public float moveVal;
-    private float maxSpeed = 10f;
+    private DebuffableProperty<float> maxSpeed = new DebuffableProperty<float>(10f);
 
     // Rotation
     public bool isRotating = false;
     public float rotateVal;
-    private float turnSpeed = 40f;
+    private DebuffableProperty<float> turnSpeed = new DebuffableProperty<float>(40f);
 
     // Crosshair
     public GameObject crosshair;
     public bool moveCrosshair = false;
     public Vector3 moveCrossVal;
-    public float maxRange = 15f;
-
+    public float maxRange = 50f;
+    
+    // stunned
+    private DebuffableProperty<bool> active = new DebuffableProperty<bool>(true);
+    
     AmmoSource ammoSource;
     PrimaryWeapon weapon;
     UltimateWeapon ultimateWeapon;
@@ -34,6 +55,7 @@ public class Tank : MonoBehaviour
         weapon = this.transform.GetComponentInChildren<PrimaryWeapon>();
         ultimateWeapon = this.transform.GetComponentInChildren<UltimateWeapon>();
         weapon.SetAmmoSource(ammoSource);
+        AddDebuff<float>(DebuffableProperties.ROTATION_SPEED, new SlowDebuff());
     }
 
     // Update is called once per frame
@@ -45,8 +67,9 @@ public class Tank : MonoBehaviour
 
         if(isRotating){
             Vector3 oldPos = crosshair.transform.position;
-            transform.Rotate(0, rotateVal * turnSpeed * Time.deltaTime, 0);
+            transform.Rotate(0, rotateVal * turnSpeed.GetFinalValue() * Time.deltaTime, 0);
             crosshair.transform.position = oldPos;
+            // Debug.Log(turnSpeed.GetFinalValue());
         }
 
         if(moveCrosshair){
@@ -121,5 +144,69 @@ public class Tank : MonoBehaviour
     {
         Debug.Log("use consumable 2");
         // todo
+    }
+
+    // /// <summary>
+    // /// Adding debuffs for float properties
+    // /// </summary>
+    // /// <param name="property"></param>
+    // /// <param name="debuff"></param>
+    // /// <exception cref="NotImplementedException"></exception>
+    // public void AddDebuff(DebuffableProperties property, Debuff<float> debuff)
+    // {
+    //     
+    //     if (property == DebuffableProperties.MOVEMENT_SPEED)
+    //     {
+    //         maxSpeed.AddDebuff(debuff);
+    //     }else if (property == DebuffableProperties.ROTATION_SPEED)
+    //     {
+    //         turnSpeed.AddDebuff(debuff);
+    //     }
+    //     else
+    //     {
+    //         throw new System.NotImplementedException();
+    //     }
+    // }
+    //
+    // /// <summary>
+    // /// Adding debuffs for bool properties
+    // /// </summary>
+    // /// <param name="property"></param>
+    // /// <param name="debuff"></param>
+    // /// <exception cref="NotImplementedException"></exception>
+    // public void AddDebuff(DebuffableProperties property, Debuff<bool> debuff)
+    // {
+    //     if (property == DebuffableProperties.ACTIVE)
+    //     {
+    //         active.AddDebuff(debuff);
+    //         return;
+    //     }
+    //     throw new System.NotImplementedException();
+    // }
+
+    public void AddDebuff<T>(DebuffableProperties property, Debuff<T> debuff)
+    {
+        if (typeof(T) == typeof(float))
+        {
+            if (property == DebuffableProperties.MOVEMENT_SPEED)
+            {
+                maxSpeed.AddDebuff(debuff as Debuff<float>);
+            }else if (property == DebuffableProperties.ROTATION_SPEED)
+            {
+                turnSpeed.AddDebuff(debuff as Debuff<float>);
+            }
+            else
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+
+        if (typeof(T) == typeof(bool))
+        {
+            if (property == DebuffableProperties.ACTIVE)
+            {
+                active.AddDebuff(debuff as Debuff<bool>);
+            }
+        }
     }
 }
