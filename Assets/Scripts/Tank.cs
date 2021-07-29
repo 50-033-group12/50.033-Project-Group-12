@@ -61,7 +61,7 @@ public class Tank : MonoBehaviour, IDebuffable
     void Update()
     {
         if(isMoving){
-            transform.Translate(-moveVal * maxSpeed.GetFinalValue() * Time.deltaTime, 0 ,0);
+            transform.Translate(0, 0 ,moveVal * maxSpeed.GetFinalValue() * Time.deltaTime);
         }
 
         if(isRotating){

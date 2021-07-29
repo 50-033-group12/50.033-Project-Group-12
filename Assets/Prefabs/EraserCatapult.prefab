@@ -897,6 +897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941424673169791387}
   - component: {fileID: 941424673169791386}
+  - component: {fileID: 8301462053630926846}
   m_Layer: 0
   m_Name: EraserCatapult
   m_TagString: Untagged
@@ -939,3 +940,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8301462053630926846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941424673169791384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56908ef3144a4894881b0fab6ec1483a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextFire: 0
+  bullet: {fileID: 3542155009114520912, guid: 33f653bb5555e344e80d0de8451c3279, type: 3}

@@ -36,7 +36,7 @@ public class WaterBalloonLauncher : UltimateWeapon
     public override void FireAt(Transform target){
         if(IsReadyToFire()){
             // Instantiate bullet
-            GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            GameObject bulletShot = Instantiate(bullet, this.transform.position , this.transform.rotation);
             
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             Vector3 vel = calcBallisticVelocityVector(this.transform, target, 60f);
