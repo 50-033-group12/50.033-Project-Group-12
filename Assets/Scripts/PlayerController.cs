@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float movementSpeed;
     public PrimaryWeapon weapon;
+    public float health = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,14 @@ public class PlayerController : MonoBehaviour
         transform.Translate(-translation, 0, 0);
         transform.Rotate(0, rotation, 0);
 
+        if (health > 100)
+        {
+            health = 100;
+        }
+        if (health < 0)
+        {
+            health = 0;
+        }
         // Shoot button
         // if(Input.GetKeyDown("mouse 0")){
         //     weapon.OnFire();
