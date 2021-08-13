@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed943af394eeb284894d6a69036cc221, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9069a27e2a217b545bb61d8eb83c144c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 22c7fbcd2ed533c4d8b01aca50047006, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1032,6 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6115304269622694481}
+  - component: {fileID: 1846013188}
   m_Layer: 5
   m_Name: Player1UI
   m_TagString: Untagged
@@ -1063,6 +1064,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1846013188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6115304269622694480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa262fc445078c48a885812bc07e49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryWeap: {fileID: 0}
+  secondaryWeap: {fileID: 0}
+  ultimateWeap: {fileID: 0}
+  healthBar: {fileID: 0}
+  fuelBar: {fileID: 0}
+  primaryWeapons:
+  - {fileID: 21300000, guid: 22c7fbcd2ed533c4d8b01aca50047006, type: 3}
+  - {fileID: 21300000, guid: 6b020a47f6fb12543bf49c3ea0818399, type: 3}
+  - {fileID: 21300000, guid: a0673c54bf48f7044923a04d3fe111c0, type: 3}
+  - {fileID: 21300000, guid: 6b47a7b79cf74314787e59a977edd991, type: 3}
+  secondaryWeapons:
+  - {fileID: 21300000, guid: ed943af394eeb284894d6a69036cc221, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: e59d15240fe842f4e907ff60fcd99fbc, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: f35c0e1278f006b4881184005ce37199, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: f7c81ca57f4d1da4b8da1a7d0a742d0d, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  ultimateWeapons:
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
+  - {fileID: 21300000, guid: 9069a27e2a217b545bb61d8eb83c144c, type: 3}
+  - {fileID: 21300000, guid: c79e88b0fc2d2c446908a80444b14fc2, type: 3}
+  - {fileID: 21300000, guid: 009109ef047b30542922e24f87f851dd, type: 3}
 --- !u!1 &6115304269970686795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1520,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
