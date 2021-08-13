@@ -22,14 +22,11 @@ namespace Events
         private int _clipAmmo;
         private int _totalAmmo;
         private readonly int _clipSize = 10;
-        
+
         // choose in inspector to test
-        [SerializeField]
-        private PrimaryWeapon _primaryWeapon;
-        [SerializeField]
-        private SecondaryWeapon _secondaryWeapon;
-        [SerializeField]
-        private UltimateWeapon _ultimateWeapon;
+        [SerializeField] private PrimaryWeapon _primaryWeapon;
+        [SerializeField] private SecondaryWeapon _secondaryWeapon;
+        [SerializeField] private UltimateWeapon _ultimateWeapon;
 
         // Start is called before the first frame update
         void Start()
@@ -37,11 +34,11 @@ namespace Events
             _playerEvents = GetComponent<PlayerEvents>();
             _fuel = _maxFuel;
             _reloadTick = _reloadTicksNeeded;
-            _ultimateCooldownTick = _ultimateCooldownTicksNeeded;
-            _secondaryCooldownTick = _secondaryCooldownTicksNeeded;
+            _ultimateCooldownTick = 0;
+            _secondaryCooldownTick = 0;
             _clipAmmo = _clipSize;
             _totalAmmo = _clipSize * 5;
-            
+
             _playerEvents.equippedPrimary.Invoke(_primaryWeapon);
             _playerEvents.equippedSecondary.Invoke(_secondaryWeapon);
             _playerEvents.equippedUltimate.Invoke(_ultimateWeapon);
@@ -56,15 +53,16 @@ namespace Events
                 _playerEvents.tickedPrimaryReload.Invoke(_reloadTick, _reloadTicksNeeded);
                 if (_reloadTick == _reloadTicksNeeded)
                 {
-                    _totalAmmo -= _clipSize;
+                    _totalAmmo = Math.Max(0, _totalAmmo - _clipSize);
                     _clipAmmo = Math.Min(_totalAmmo, _clipSize);
+                    _playerEvents.primaryAmmoChanged.Invoke(_clipAmmo, _totalAmmo);
                 }
             }
 
             if (_secondaryCooldownTick < _secondaryCooldownTicksNeeded)
             {
                 _secondaryCooldownTick++;
-                _playerEvents.tickedUltimateCooldown.Invoke(_secondaryCooldownTick, _secondaryCooldownTicksNeeded);
+                _playerEvents.tickedSecondaryCooldown.Invoke(_secondaryCooldownTick, _secondaryCooldownTicksNeeded);
             }
 
             if (_ultimateCooldownTick < _ultimateCooldownTicksNeeded)
@@ -88,6 +86,11 @@ namespace Events
 
         public void FirePrimary(InputAction.CallbackContext context)
         {
+            if (!context.performed)
+            {
+                return;
+            }
+
             if (_clipAmmo <= 0)
             {
                 Debug.Log("Pls reload!");
@@ -101,6 +104,11 @@ namespace Events
 
         public void FireSecondary(InputAction.CallbackContext context)
         {
+            if (!context.performed)
+            {
+                return;
+            }
+
             if (_secondaryCooldownTick < _secondaryCooldownTicksNeeded)
             {
                 Debug.Log("Secondary is not ready!");
@@ -113,6 +121,11 @@ namespace Events
 
         public void FireUltimate(InputAction.CallbackContext context)
         {
+            if (!context.performed)
+            {
+                return;
+            }
+
             if (_ultimateCooldownTick < _ultimateCooldownTicksNeeded)
             {
                 Debug.Log("Ultimate is not ready!");
@@ -128,6 +141,13 @@ namespace Events
             if (_totalAmmo <= 0)
             {
                 Debug.Log("Not enough ammo to reload");
+                return;
+            }
+
+            if (_clipAmmo == _clipSize)
+            {
+                Debug.Log("Clip is full");
+                return;
             }
 
             Debug.Log("Starting reload...");
