@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class G2PenProjectile : MonoBehaviour
 {
+    public int damage = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +18,16 @@ public class G2PenProjectile : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col){
-        collission();
-        if(col.tag == "Ground" || col.tag == "Obstacles"){
+        if (col.tag == "player"){
+            // call damage here
+            Destroy(gameObject);
+        }
+        else if(col.tag == "Ground" || col.tag == "Obstacles"){
             Destroy(gameObject);
         }
     }
 
     void OnBecameInvisible(){
         Destroy(gameObject);
-    }
-
-    public void collission(){
-        Debug.Log("Collision behaviour here");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RubberBandProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int damage = 20;
     void Start()
     {
         
@@ -16,17 +16,16 @@ public class RubberBandProjectile : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider col){
-        collission();
-        if(col.tag == "Ground" || col.tag == "Obstacles"){
+        if (col.tag == "player"){
+            // call damage here
+            Destroy(gameObject);
+        }
+        else if(col.tag == "Ground" || col.tag == "Obstacles"){
             Destroy(gameObject);
         }
     }
 
     void OnBecameInvisible(){
         Destroy(gameObject);
-    }
-
-    public void collission(){
-        Debug.Log("Collision behaviour here");
     }
 }

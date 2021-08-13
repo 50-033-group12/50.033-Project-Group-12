@@ -5,6 +5,7 @@ using UnityEngine;
 public class LipoBatteryBomb : MonoBehaviour
 {
     //adjust later
+    public int damage = 100;
     public float radius = 3f;
     public float timeToWait = 10f;
     // Start is called before the first frame update
