@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class G2PenProjectile : MonoBehaviour
 {
-    public int damage = 100;
+    public float damage = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,8 @@ public class G2PenProjectile : MonoBehaviour
 
     void OnTriggerEnter(Collider col){
         if (col.tag == "player"){
-            // call damage here
+            DamageRequest req = new DamageRequest(damage, false, this.gameObject);
+            col.GetComponent<IDamageable>().AfflictDamage(req);
             Destroy(gameObject);
         }
         else if(col.tag == "Ground" || col.tag == "Obstacles"){

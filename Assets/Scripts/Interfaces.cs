@@ -12,7 +12,7 @@ public interface IWeapon
 
 public interface IDamageable
 {
-    void getDamaged();
+    void AfflictDamage(DamageRequest req);
 }
 
 public interface AmmoSource

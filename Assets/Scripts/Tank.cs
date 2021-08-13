@@ -21,8 +21,11 @@ class SlowDebuff : Debuff<float>
         return false;
     }
 }
-public class Tank : MonoBehaviour, IDebuffable
+public class Tank : MonoBehaviour, IDebuffable, IDamageable
 {
+    // HP
+    private float health = 150f;
+
     // Movement
     public bool isMoving = false;
     public float moveVal;
@@ -143,6 +146,16 @@ public class Tank : MonoBehaviour, IDebuffable
     {
         Debug.Log("use consumable 2");
         // todo
+    }
+
+    public void AfflictDamage(DamageRequest req){
+        if(health >= req.damage){
+            health -= req.damage;
+            // fire event here
+        }
+        else{
+            health = 0f;
+        }
     }
 
     // /// <summary>
