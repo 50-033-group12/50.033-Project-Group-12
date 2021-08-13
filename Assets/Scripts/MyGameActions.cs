@@ -40,7 +40,7 @@ public class @MyGameActions : IInputActionCollection, IDisposable
                     ""id"": ""298bebbf-7d3e-4c85-9621-1fa93326de78"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""FireUltimate"",
@@ -48,7 +48,7 @@ public class @MyGameActions : IInputActionCollection, IDisposable
                     ""id"": ""4c62992c-a059-4d7c-b0b3-df567d4543f2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""UseConsumable1"",
