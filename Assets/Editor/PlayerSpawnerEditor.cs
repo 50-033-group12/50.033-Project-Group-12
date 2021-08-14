@@ -26,7 +26,7 @@ public class PlayerSpawnerEditor : Editor
         if (GUILayout.Button("Spawn"))
         {
             myScript.ReloadPrefabs();
-            myScript.SpawnPlayer(playerId, new Tuple<Events.PrimaryWeapon, SecondaryWeapon, Events.UltimateWeapon>(primaryWeapon, secondaryWeapon, ultimateWeapon));
+            myScript.SpawnPlayer(playerId, new Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>(primaryWeapon, secondaryWeapon, ultimateWeapon));
         }
     }
 }
