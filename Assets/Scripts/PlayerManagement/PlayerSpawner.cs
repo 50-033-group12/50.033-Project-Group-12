@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         _playerContainerPrefab = (GameObject) Resources.Load("Models/PlayerContainer");
         _primaryWeaponPrefabs = new Dictionary<Events.PrimaryWeapon, GameObject>();
-        _secondaryWeaponPrefabs = new Dictionary<SecondaryWeapon, GameObject>();
+        _secondaryWeaponPrefabs = new Dictionary<Events.SecondaryWeapon, GameObject>();
         _ultimateWeaponPrefabs = new Dictionary<Events.UltimateWeapon, GameObject>();
         var primaryWeaponNames = Enum.GetNames(typeof(Events.PrimaryWeapon));
         foreach (var primaryWeaponName in primaryWeaponNames)
