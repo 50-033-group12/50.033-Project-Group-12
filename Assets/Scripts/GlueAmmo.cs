@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GlueAmmo : MonoBehaviour
 {
+    public AudioClip sfx;
     public GameObject glue;
     void Start()
     {
@@ -20,7 +21,8 @@ public class GlueAmmo : MonoBehaviour
         if(col.tag == "Ground" || col.tag == "Obstacles"){
             Vector3 newPos = new Vector3(this.transform.position.x, 0.03f, this.transform.position.z);
             Instantiate(glue, newPos, this.transform.rotation);
-            Destroy(gameObject);
+            this.GetComponent<AudioSource>().PlayOneShot(sfx);
+            Destroy(gameObject, sfx.length);
         }
     }
 

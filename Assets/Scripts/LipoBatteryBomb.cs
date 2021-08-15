@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LipoBatteryBomb : MonoBehaviour
 {
+    public AudioClip sfx;
     //adjust later
     public int damage = 100;
     public float radius = 3f;
@@ -34,12 +35,11 @@ public class LipoBatteryBomb : MonoBehaviour
             // playe rlayer is 6
             if(c.gameObject.layer == 6){
                 Debug.Log("Player hit");
+                DamageRequest req = new DamageRequest(damage, false, this.gameObject);
+                c.GetComponent<IDamageable>().AfflictDamage(req);
             }
         }
-        // Debug.Log("Item within radius: " + hitColliders.Length);
-
-        //do stuff
-
-        Destroy(gameObject);
+        this.GetComponent<AudioSource>().PlayOneShot(sfx);
+        Destroy(gameObject, sfx.length);
     }
 }
