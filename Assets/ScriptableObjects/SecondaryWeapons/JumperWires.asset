@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7030545529444ca7b23c5e045fda85c2, type: 3}
   m_Name: JumperWires
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 0}
-  cooldown: 0
+  name: Jumper Wires
+  description: Shorts yourself, removing all debuffs.
+  icon: {fileID: 21300000, guid: f7c81ca57f4d1da4b8da1a7d0a742d0d, type: 3}
+  cooldown: 120

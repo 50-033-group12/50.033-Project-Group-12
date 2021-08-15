@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf05e1d73f114eb8af610165f0a270ba, type: 3}
   m_Name: EraserBeyblade
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 0}
-  cooldown: 0
+  name: Eraser Beyblade
+  description: LET IT RIPPP
+  icon: {fileID: 21300000, guid: c79e88b0fc2d2c446908a80444b14fc2, type: 3}
+  cooldown: 60

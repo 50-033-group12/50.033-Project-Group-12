@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7030545529444ca7b23c5e045fda85c2, type: 3}
   m_Name: SolarPanel
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 0}
+  name: Solar Panel
+  description: Increases battery recharge rate
+  icon: {fileID: 21300000, guid: 822eaa4300bf89f4cbefbf1d6cc1f283, type: 3}
   cooldown: 0

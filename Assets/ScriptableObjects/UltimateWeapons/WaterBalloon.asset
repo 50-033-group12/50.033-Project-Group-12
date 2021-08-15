@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf05e1d73f114eb8af610165f0a270ba, type: 3}
   m_Name: WaterBalloon
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 0}
-  cooldown: 0
+  name: Water Balloon
+  description: Drops a water balloon at the target, slowing enemies in the area
+  icon: {fileID: 21300000, guid: 9069a27e2a217b545bb61d8eb83c144c, type: 3}
+  cooldown: 60
