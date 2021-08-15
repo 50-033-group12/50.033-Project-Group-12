@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf05e1d73f114eb8af610165f0a270ba, type: 3}
+  m_Name: LiPoBattery
+  m_EditorClassIdentifier: 
+  name: Damaged Lithium Ion Battery
+  description: Drops a broken battery bomb that will explode after a few seconds,
+    damaging all thymios in the vicinity
+  icon: {fileID: 21300000, guid: 4504978d99f9e6a4eaa8208b7559c8bc, type: 3}
+  cooldown: 15

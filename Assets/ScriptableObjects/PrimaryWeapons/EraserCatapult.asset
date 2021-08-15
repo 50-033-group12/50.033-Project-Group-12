@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c628b4765f024295b30017a0bda1c743, type: 3}
   m_Name: EraserCatapult
   m_EditorClassIdentifier: 
-  name: Eraser
-  description: Hurls an eraser in a parabolic arc towards the target crosshair. Eraser
-    explodes on impact.
+  name: Eraser Catapult
+  description: Hurls an eraser in a parabolic arc towards the target crosshair. Able
+    to bypass obstacles with its parabolic trajectory.
   icon: {fileID: 21300000, guid: a0673c54bf48f7044923a04d3fe111c0, type: 3}
   isClipped: 0
   clipSize: 0

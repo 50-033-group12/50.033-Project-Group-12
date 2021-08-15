@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7030545529444ca7b23c5e045fda85c2, type: 3}
-  m_Name: JumperWires
+  m_Name: Glue
   m_EditorClassIdentifier: 
-  name: Jumper Wires
-  description: Shorts yourself, removing all debuffs.
-  icon: {fileID: 21300000, guid: f7c81ca57f4d1da4b8da1a7d0a742d0d, type: 3}
-  cooldown: 45
+  name: Glue
+  description: Throw a ball of glue at target and slows down any thymio that goes
+    through it
+  icon: {fileID: 21300000, guid: ed943af394eeb284894d6a69036cc221, type: 3}
+  cooldown: 25
