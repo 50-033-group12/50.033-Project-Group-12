@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1874888110507111129}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: ChangeColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,7 +1666,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40016b25e06e2734ab29f9f712d935ac, type: 2}
+  - {fileID: 2100000, guid: 381b26616b88fec47af34af00b35f095, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
