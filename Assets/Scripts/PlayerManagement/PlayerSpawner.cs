@@ -59,7 +59,7 @@ public class PlayerSpawner : MonoBehaviour
     {
     }
 
-    public void SpawnPlayer(int playerId, Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> loadout)
+    public GameObject SpawnPlayer(int playerId, Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> loadout)
     {
 
         // create thymio body
@@ -73,7 +73,8 @@ public class PlayerSpawner : MonoBehaviour
 
         // create ultimate
         Instantiate(_ultimateWeaponPrefabs[loadout.Item3], player.transform);
-        player.name = "Player 1";
+        player.name = $"Player {playerId}";
         var inputActions = player.GetComponent<PlayerInput>();
+        return player;
     }
 }
