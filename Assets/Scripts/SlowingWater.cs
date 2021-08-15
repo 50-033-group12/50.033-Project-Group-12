@@ -6,7 +6,7 @@ class SlowWaterDebuff : Debuff<float>
 {
     public override (float, bool) DebuffFunction(float input)
     {
-        return (input * 0.5f, false);
+        return (input * 0.3f, false);
     }
 
     public override string GetName()

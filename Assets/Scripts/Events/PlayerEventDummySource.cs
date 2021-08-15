@@ -31,6 +31,7 @@ namespace Events
         // Start is called before the first frame update
         void Start()
         {
+            Debug.Log(_primaryWeapon);
             _playerEvents = GetComponent<PlayerEvents>();
             _fuel = _maxFuel;
             _reloadTick = _reloadTicksNeeded;

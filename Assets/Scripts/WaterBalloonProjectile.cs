@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaterBalloonProjectile : MonoBehaviour
 {
+    public AudioClip sfx;
     public GameObject water;
     // Start is called before the first frame update
     void Start()
@@ -18,19 +19,15 @@ public class WaterBalloonProjectile : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col){
-        collission();
         if(col.tag == "Ground" || col.tag == "Obstacles"){
             Vector3 newPos = new Vector3(this.transform.position.x, 0.03f, this.transform.position.z);
             Instantiate(water, newPos, this.transform.rotation);
-            Destroy(gameObject);
+            this.GetComponent<AudioSource>().PlayOneShot(sfx);
+            Destroy(gameObject, sfx.length);
         }
     }
 
     void OnBecameInvisible(){
         Destroy(gameObject);
-    }
-
-    public void collission(){
-        Debug.Log("Collision behaviour here");
     }
 }

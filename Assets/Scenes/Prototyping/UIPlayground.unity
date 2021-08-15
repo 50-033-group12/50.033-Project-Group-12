@@ -921,6 +921,7 @@ GameObject:
   - component: {fileID: 1801783119}
   - component: {fileID: 1801783118}
   - component: {fileID: 1801783117}
+  - component: {fileID: 1801783120}
   m_Layer: 0
   m_Name: FakePlayer
   m_TagString: Untagged
@@ -940,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9a062a13339384e9ad5241f679dd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _primaryWeapon: 0
+  _primaryWeapon: 1
   _secondaryWeapon: 0
   _ultimateWeapon: 3
 --- !u!114 &1801783118
@@ -961,7 +962,19 @@ MonoBehaviour:
       - m_Target: {fileID: 1846013188}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ChangePrimaryWeapon
-        m_Mode: 3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnPrimaryEquipped
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -976,7 +989,19 @@ MonoBehaviour:
       - m_Target: {fileID: 1846013188}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ChangeSecondaryWeapon
-        m_Mode: 3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnSecondaryEquipped
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -991,7 +1016,19 @@ MonoBehaviour:
       - m_Target: {fileID: 1846013188}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ChangeUltimateWeapon
-        m_Mode: 3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnUltimateEquipped
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1047,13 +1084,49 @@ MonoBehaviour:
         m_CallState: 2
   firedPrimary:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnPrimaryFired
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   firedSecondary:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnSecondaryFired
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   firedUltimate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1801783120}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnUltimateFired
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   tickedPrimaryReload:
     m_PersistentCalls:
       m_Calls:
@@ -1113,6 +1186,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801783120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801783116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f658c9afc25affe49a92f18566c46f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm: {fileID: 8300000, guid: 27a36dc82ff32054d88d76929bcd1079, type: 3}
+  primaryWeapon:
+  - {fileID: 8300000, guid: 4d7297992674fe347a8a457834a9b508, type: 3}
+  - {fileID: 8300000, guid: 44e03e5365ca3194582c99cf126ea0ef, type: 3}
+  - {fileID: 8300000, guid: ac7e1bc1641c9104f888995e3d31e0a0, type: 3}
+  - {fileID: 0}
+  secondaryWeapon:
+  - {fileID: 8300000, guid: 04ef5a4cf234fc94da05c15186edc758, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: f3fd73a3a1827684495b92c74ec61c1f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  ultimateWeapon:
+  - {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  - {fileID: 8300000, guid: d9419ba0bfac1e84a95418ac5851caf6, type: 3}
+  - {fileID: 8300000, guid: dd3f702d770e06e4688dd9e9d0616f15, type: 3}
+  - {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!224 &1838977154 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 49182930833359821, guid: ed24f969456cfa449b9f884a50c6bb96, type: 3}

@@ -19,9 +19,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     public Sprite[] ultimateWeapons;
 
-    // Enums for weapons
-    private PlayerEvents events;
-
 
     void Start(){
         fuelBar = this.transform.GetChild(0).gameObject;
@@ -31,16 +28,16 @@ public class UIManager : MonoBehaviour
         secondaryWeap = this.transform.GetChild(4).gameObject;
     }
 
-    public void ChangePrimaryWeapon(int weapon){
-        primaryWeap.transform.GetChild(0).GetComponent<Image>().sprite = primaryWeapons[weapon];
+    public void ChangePrimaryWeapon(Events.PrimaryWeapon weapon){
+        primaryWeap.transform.GetChild(0).GetComponent<Image>().sprite = primaryWeapons[(int) weapon];
     }
 
-    public void ChangeSecondaryWeapon(int weapon){
-        secondaryWeap.transform.GetChild(0).GetComponent<Image>().sprite = secondaryWeapons[weapon];
+    public void ChangeSecondaryWeapon(Events.SecondaryWeapon weapon){
+        secondaryWeap.transform.GetChild(0).GetComponent<Image>().sprite = secondaryWeapons[(int) weapon];
     }
 
-    public void ChangeUltimateWeapon(int weapon){
-        ultimateWeap.transform.GetChild(0).GetComponent<Image>().sprite = ultimateWeapons[weapon];
+    public void ChangeUltimateWeapon(Events.UltimateWeapon weapon){
+        ultimateWeap.transform.GetChild(0).GetComponent<Image>().sprite = ultimateWeapons[(int) weapon];
     }
 
     public void ChangeFuel(float current, float total){
