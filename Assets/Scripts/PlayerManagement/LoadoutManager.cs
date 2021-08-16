@@ -5,21 +5,22 @@ using System.Linq;
 using Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public static class LoadoutManager
 {
-    static LoadoutManager(){
-    
-    _playerDevices = new Dictionary<int, InputDevice>();
-    _playerPrimaryWeapons = new Dictionary<int, Events.PrimaryWeapon>();
-    _playerSecondaryWeapons = new Dictionary<int, Events.SecondaryWeapon>();
-    _playerUltimateWeapons = new Dictionary<int, Events.UltimateWeapon>();
+    static LoadoutManager()
+    {
+        _playerDevices = new Dictionary<int, InputDevice>();
+        _playerPrimaryWeapons = new Dictionary<int, Events.PrimaryWeapon>();
+        _playerSecondaryWeapons = new Dictionary<int, Events.SecondaryWeapon>();
+        _playerUltimateWeapons = new Dictionary<int, Events.UltimateWeapon>();
     }
 
     private static Dictionary<int, InputDevice> _playerDevices;
 
     private static Dictionary<int, Events.PrimaryWeapon> _playerPrimaryWeapons;
-    
+
     private static Dictionary<int, Events.SecondaryWeapon> _playerSecondaryWeapons;
 
     private static Dictionary<int, Events.UltimateWeapon> _playerUltimateWeapons;
@@ -44,13 +45,23 @@ public static class LoadoutManager
         _playerUltimateWeapons.Add(playerId, ultimateWeapon);
     }
 
-    public static Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> GetPlayerLoadout(int playerId)
+    public static Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>
+        GetPlayerLoadout(int playerId)
     {
-        return new Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>(_playerPrimaryWeapons[playerId], _playerSecondaryWeapons[playerId], _playerUltimateWeapons[playerId]);
+        return new Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>(
+            _playerPrimaryWeapons[playerId], _playerSecondaryWeapons[playerId], _playerUltimateWeapons[playerId]);
     }
 
     public static List<int> GetPlayerIds()
     {
         return _playerDevices.Keys.ToList();
+    }
+
+    public static void Reset()
+    {
+        _playerDevices.Clear();
+        _playerPrimaryWeapons.Clear();
+        _playerSecondaryWeapons.Clear();
+        _playerUltimateWeapons.Clear();
     }
 }

@@ -81,6 +81,7 @@ namespace PlayerManagement
             Instantiate(_ultimateWeaponPrefabs[loadout.Item3], player.transform);
             player.name = $"Player {playerId}";
             var tank = player.GetComponent<Tank>();
+            tank.playerId = playerId;
             var playerEventBus = player.GetComponent<PlayerEvents>();
             UIManagerManager manager = UIManagerManager.GetInstance();
             if (manager != null && manager.GetPlayerUI(playerId) != null)

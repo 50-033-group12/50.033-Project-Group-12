@@ -10,11 +10,19 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 181f;
     float minutes;
     float seconds;
+
+    private static Timer _instance;
+
+    public static Timer GetInstance()
+    {
+        return _instance;
+    }
     
     // Start is called before the first frame update
     void Start()
     {
         timer = this.GetComponent<Text>();
+        _instance = this;
     }
 
     // Update is called once per frame
@@ -26,7 +34,9 @@ public class Timer : MonoBehaviour
         }
         else{
             timeRemaining = 0f;
+            BattleResultUI.GetInstance().Timeout();
             ChangeTime();
+            enabled = false;
         }
     }
 

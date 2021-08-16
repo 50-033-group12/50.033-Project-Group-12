@@ -25,6 +25,8 @@ class SlowDebuff : Debuff<float>
 
 public class Tank : MonoBehaviour, IDebuffable, IDamageable
 {
+    public int playerId = 1;
+
     // HP, Battery
     private float health;
     private float maxHealth = 150f;
@@ -158,7 +160,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             moveCrosshair = true;
             float x = value.ReadValue<Vector2>().x;
             float y = value.ReadValue<Vector2>().y;
-            moveCrossVal = new Vector3(x, 0, y);
+            moveCrossVal = new Vector3(x, 0, y) * 0.05f;
         }
         else if (value.phase == InputActionPhase.Canceled)
         {
@@ -205,6 +207,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         {
             health = 0f;
             playerEvents.hpChanged.Invoke(health, maxHealth);
+            if (Timer.GetInstance().enabled)
+            {
+                Timer.GetInstance().enabled = false;
+                BattleResultUI.GetInstance().PlayerDied(playerId);
+            }
         }
     }
 

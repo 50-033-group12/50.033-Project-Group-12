@@ -31,7 +31,7 @@ public class @MyGameActions : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""a7c6825a-6a61-4a1e-94cc-bfde2d81c70c"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""interactions"": """"
                 },
                 {
