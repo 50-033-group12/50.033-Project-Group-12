@@ -185,40 +185,12 @@ MonoBehaviour:
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 637804fe-50f2-4d7a-a65f-eb3d0b72a63d
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+    m_ActionId: a55404f9-b045-4f23-b0cd-c2ea4e52dd04
+    m_ActionName: UI/Start[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4ed42845-b096-49ee-a636-fc0bee749bc7
-    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bb1c9bc8-bb38-4af6-85b9-5f1f72d6a2ba
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3a895259-8fcb-4193-abe1-5f893526036a
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2459e0fb-a79e-4965-bf6a-09e9ea207a0b
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 38d6a22b-f8f1-4ef6-b543-d266886e308d
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3952a871-e795-4230-810d-901cf3855a19
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f9c8704c-61c8-45dd-9bb1-807f0dfe157c
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 18cd8ac6-fc2a-4315-a124-c0ee86e57bab
-    m_ActionName: UI/TrackedDeviceOrientation
+    m_ActionId: 945bb51e-04a2-43ee-9daf-437d6f46d52f
+    m_ActionName: UI/Ready[/DualShock4GamepadHID/rightTrigger,/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -240,7 +212,7 @@ MonoBehaviour:
   moveVal: 0
   isRotating: 0
   rotateVal: 0
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 4630370195025325650}
   moveCrosshair: 0
   moveCrossVal: {x: 0, y: 0, z: 0}
   maxRange: 50
@@ -317,99 +289,99 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[263].z
-      value: 0.00000031098054
+      value: 0.0000003109805
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[264].z
-      value: 0.00000031098054
+      value: 0.0000003109805
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[265].z
-      value: 0.00000031098054
+      value: 0.0000003109805
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[278].z
-      value: 0.0000002709875
+      value: 0.00000027098753
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[279].z
-      value: 0.0000002709875
+      value: 0.00000027098753
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[280].z
-      value: 0.0000002709875
+      value: 0.00000027098753
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[557].z
-      value: -0.00000012715661
+      value: -0.0000002543134
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[560].z
-      value: -0.00000012715654
+      value: -0.00000025431325
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[561].z
-      value: 6.3664657e-14
+      value: 4.547474e-14
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[562].z
-      value: -0.00000008742009
+      value: -0.00000002384179
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[568].z
-      value: -0.000000087420105
+      value: -0.000000023841805
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[569].z
-      value: -0.00000006357821
+      value: 7.5791234e-14
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[570].z
-      value: 4.24431e-14
+      value: -0.00000012715661
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[575].y
-      value: -1.8189892e-14
+      value: -1.8189894e-14
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[575].z
-      value: -0.00000019073487
+      value: -0.00000019073488
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[576].y
-      value: -9.094948e-15
+      value: -9.094947e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[576].z
-      value: -0.000000095367454
+      value: -0.00000009536744
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[582].y
-      value: -9.094948e-15
+      value: -9.094946e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Tangents.Array.data[582].z
-      value: -0.00000009536745
+      value: -0.00000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Textures0.Array.data[264].x
-      value: 1
+      value: 0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Textures0.Array.data[279].x
-      value: -1
+      value: -0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Textures0.Array.data[569].y
-      value: 0.0000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
-      propertyPath: m_Textures0.Array.data[570].y
       value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
+      propertyPath: m_Textures0.Array.data[570].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018738060301876840, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Textures0.Array.data[575].x
-      value: 0.59818256
+      value: 0.5981823
       objectReference: {fileID: 0}
     - target: {fileID: 6294955156203215593, guid: 12cf95419ead8274daf245373525591c, type: 3}
       propertyPath: m_Mesh
@@ -479,6 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e795668c0c01f1e45a0f4f3805eb62c1, type: 3}
+--- !u!1 &4630370195025325650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2183589199848464824, guid: e795668c0c01f1e45a0f4f3805eb62c1, type: 3}
+  m_PrefabInstance: {fileID: 6777860153947623402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4630370195025325660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2183589199848464822, guid: e795668c0c01f1e45a0f4f3805eb62c1, type: 3}
