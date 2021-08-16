@@ -8,6 +8,7 @@ namespace ThymioSelection
     public class ThymioSelectPlayer : MonoBehaviour
     {
         [SerializeField] private int playerId = 1;
+        [SerializeField] private Material teamColor;
 
         [SerializeField] private GameObject _doorAbove;
 
@@ -40,10 +41,13 @@ namespace ThymioSelection
         [SerializeField] private Text _itemType;
         [SerializeField] private Text _itemDescription;
 
+        [SerializeField] private Image colorPreview;
+
         // Start is called before the first frame update
         void Start()
         {
             playerIdText.text = $"PLAYER {playerId}";
+            colorPreview.color = teamColor.color;
         }
 
         void OnStart()
