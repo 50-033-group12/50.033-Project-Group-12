@@ -25,11 +25,13 @@ public class PlayerSpawner : MonoBehaviour
             new Vector3(-35.91f, 0, 21.12f),
             new Vector3(11, 0, 16)
         };
-        for (int i = 1; i <= 2; i++)
+        int i = 0;
+        foreach (int playerId in LoadoutManager.GetPlayerIds())
         {
-            Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> playerLoadout = LoadoutManager.GetPlayerLoadout(i);
-            var player = SpawnPlayer(i, playerLoadout);
-            player.transform.position = spawnPositions[i-1];
+            Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> playerLoadout = LoadoutManager.GetPlayerLoadout(playerId);
+            var player = SpawnPlayer(playerId, playerLoadout);
+            player.transform.position = spawnPositions[i];
+            i++;
         }
     }
 
@@ -87,6 +89,23 @@ public class PlayerSpawner : MonoBehaviour
         Instantiate(_ultimateWeaponPrefabs[loadout.Item3], player.transform);
         player.name = $"Player {playerId}";
         var tank = player.GetComponent<Tank>();
+        var playerEventBus = player.GetComponent<PlayerEvents>();
+        UIManagerManager manager = UIManagerManager.GetInstance();
+        Debug.Log(manager);
+        if (manager != null && manager.GetPlayerUI(playerId) != null)
+        {
+            UIManager ui = manager.GetPlayerUI(playerId);
+            playerEventBus.equippedPrimary.AddListener(ui.ChangePrimaryWeapon);
+            playerEventBus.equippedSecondary.AddListener(ui.ChangeSecondaryWeapon);
+            playerEventBus.equippedUltimate.AddListener(ui.ChangeUltimateWeapon);
+            playerEventBus.fuelChanged.AddListener(ui.ChangeFuel);
+            playerEventBus.hpChanged.AddListener(ui.ChangeHealth);
+            playerEventBus.primaryAmmoChanged.AddListener(ui.ChangeAmmo);
+            playerEventBus.tickedPrimaryReload.AddListener(ui.TickedPrimaryReload);
+            playerEventBus.tickedSecondaryCooldown.AddListener(ui.TickedSecondaryCooldown);
+            playerEventBus.tickedUltimateCooldown.AddListener(ui.TickedUltimateCooldown);
+        }
+        tank.PostSetup();
         return player;
     }
 }

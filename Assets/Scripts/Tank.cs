@@ -60,6 +60,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         weapon.SetAmmoSource(ammoSource);
     }
 
+    public void PostSetup()
+    {
+        // todo amanda put the event bus stuff here
+    }
+
     // Update is called once per frame
     void Update()
     {
