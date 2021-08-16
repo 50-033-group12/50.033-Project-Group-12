@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3014427406679027465}
   - component: {fileID: 4728792317827071139}
   - component: {fileID: 1320724683855461182}
-  - component: {fileID: 8860537232793211122}
   m_Layer: 0
   m_Name: Torus (1)
   m_TagString: Untagged
@@ -6858,20 +6857,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2447791428437629235}
   m_Mesh: {fileID: 0}
---- !u!64 &8860537232793211122
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447791428437629235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2914379721944385403
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,7 +6906,6 @@ GameObject:
   - component: {fileID: 5081360220436287591}
   - component: {fileID: 8101896322794147917}
   - component: {fileID: 4983021431450217404}
-  - component: {fileID: 3775127832300387898}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -8979,20 +8963,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3578670473514628859}
   m_Mesh: {fileID: 0}
---- !u!64 &3775127832300387898
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3578670473514628859}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3775420464572593105
 GameObject:
   m_ObjectHideFlags: 0
@@ -9006,7 +8976,6 @@ GameObject:
   - component: {fileID: 7994704331036206500}
   - component: {fileID: 8938789277910402719}
   - component: {fileID: 8559479650074912668}
-  - component: {fileID: 6871038790016073578}
   m_Layer: 0
   m_Name: Arch
   m_TagString: ChangeColour
@@ -10018,20 +9987,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775420464572593105}
   m_Mesh: {fileID: 0}
---- !u!64 &6871038790016073578
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3775420464572593105}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6351093179713093512
 GameObject:
   m_ObjectHideFlags: 0
@@ -10045,7 +10000,6 @@ GameObject:
   - component: {fileID: 8328193611091699197}
   - component: {fileID: 7711456148187011853}
   - component: {fileID: 1383352008354024260}
-  - component: {fileID: 5642046502468305297}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: ChangeColour
@@ -11512,20 +11466,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6351093179713093512}
   m_Mesh: {fileID: 0}
---- !u!64 &5642046502468305297
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6351093179713093512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6594026024488407984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11539,7 +11479,6 @@ GameObject:
   - component: {fileID: 8591656380881761883}
   - component: {fileID: 3823008931544616600}
   - component: {fileID: 1423810725931730498}
-  - component: {fileID: 519282522040007363}
   m_Layer: 0
   m_Name: Torus
   m_TagString: ChangeColour
@@ -18399,20 +18338,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6594026024488407984}
   m_Mesh: {fileID: 0}
---- !u!64 &519282522040007363
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6594026024488407984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7913704241195488345
 GameObject:
   m_ObjectHideFlags: 0
@@ -18426,7 +18351,6 @@ GameObject:
   - component: {fileID: 2301018452284912296}
   - component: {fileID: 5848804624623271117}
   - component: {fileID: 3617408459594200008}
-  - component: {fileID: 702410371737145836}
   m_Layer: 0
   m_Name: Pipe (1)
   m_TagString: ChangeColour
@@ -20483,18 +20407,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7913704241195488345}
-  m_Mesh: {fileID: 0}
---- !u!64 &702410371737145836
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7913704241195488345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

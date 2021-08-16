@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1091901821845294393}
   - component: {fileID: 1091901821845294394}
   - component: {fileID: 1091901821845294395}
-  - component: {fileID: 1091901821845294388}
   m_Layer: 0
   m_Name: TrackingDart
   m_TagString: Untagged
@@ -2109,7 +2108,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3f9ad6419dfe4574ab7d09cefa3b6cf8, type: 2}
-  - {fileID: 2100000, guid: 2d6c05add53416b4f895c9fc7137de5c, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2138,18 +2137,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091901821845294389}
-  m_Mesh: {fileID: 0}
---- !u!64 &1091901821845294388
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091901821845294389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
