@@ -22,8 +22,8 @@ public class PlayerSpawner : MonoBehaviour
         ReloadPrefabs();
         Vector3[] spawnPositions = new[]
         {
-            new Vector3(-20, 0, 30),
-            new Vector3(-20, 0, -40)
+            new Vector3(-35.91f, 0, 21.12f),
+            new Vector3(11, 0, 16)
         };
         for (int i = 1; i <= 2; i++)
         {
