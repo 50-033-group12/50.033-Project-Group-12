@@ -36,7 +36,7 @@ public class LipoBatteryBomb : MonoBehaviour
             if(c.gameObject.layer == 6){
                 Debug.Log("Player hit");
                 DamageRequest req = new DamageRequest(damage, false, this.gameObject);
-                c.GetComponent<IDamageable>().AfflictDamage(req);
+                c.GetComponentInParent<IDamageable>().AfflictDamage(req);
             }
         }
         this.GetComponent<AudioSource>().PlayOneShot(sfx);
