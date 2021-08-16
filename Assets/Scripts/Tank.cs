@@ -74,8 +74,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         weapon.SetAmmoSource(ammoSource);
 
         playerEvents = GetComponent<PlayerEvents>();
-        PostSetup(); //to set weapons
 
+        playerEvents.equippedPrimary.Invoke(weapon.GetPrimaryWeaponType());
+        playerEvents.equippedSecondary.Invoke(secondaryWeapon.GetSecondaryWeaponType());
+        playerEvents.equippedUltimate.Invoke(ultimateWeapon.GetUltimateWeaponType());
+        
         fuel = maxFuel;
         secondaryTicksNeeded = (int) (60 * secondaryWeapon.GetFireRate());
         secondaryTicks = secondaryTicksNeeded;
@@ -83,13 +86,6 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         ultiTicksNeeded = (int) (60 * ultimateWeapon.GetFireRate());
         ultiTicks = ultiTicksNeeded;
 
-    }
-
-    public void PostSetup()
-    {
-        playerEvents.equippedPrimary.Invoke(weapon.GetPrimaryWeaponType());
-        playerEvents.equippedSecondary.Invoke(secondaryWeapon.GetSecondaryWeaponType());
-        playerEvents.equippedUltimate.Invoke(ultimateWeapon.GetUltimateWeaponType());
     }
 
     // Update is called once per frame

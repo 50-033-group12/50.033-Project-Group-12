@@ -105,7 +105,6 @@ public class PlayerSpawner : MonoBehaviour
             playerEventBus.tickedSecondaryCooldown.AddListener(ui.TickedSecondaryCooldown);
             playerEventBus.tickedUltimateCooldown.AddListener(ui.TickedUltimateCooldown);
         }
-        tank.PostSetup();
         return player;
     }
 }
