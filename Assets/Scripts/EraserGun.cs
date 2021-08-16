@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class EraserGun : PrimaryWeapon
 {
@@ -33,7 +34,7 @@ public class EraserGun : PrimaryWeapon
     }
 
     public override void FireAt(Transform target){
-        if(IsReadyToFire()){
+        if(IsReadyToFire() && ammoSource.GetCount() > 0){
             // Instantiate bullet
             GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
             
@@ -42,7 +43,10 @@ public class EraserGun : PrimaryWeapon
             // Debug.Log(vel);
             m_Rigidbody.velocity = vel;
 
+            ammoSource.Consume(1);
             nextFire = Time.time + GetFireRate();
+            this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();
+            this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(ammoSource.GetCount(), 0);
         }
     }
 

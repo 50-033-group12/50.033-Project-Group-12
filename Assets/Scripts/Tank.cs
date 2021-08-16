@@ -31,12 +31,6 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     private float fuel;
     private float maxFuel = 45f;
 
-    // secondary and ultimate ticks
-    private int secondaryTicks;
-    private int secondaryTicksNeeded;
-    private int ultiTicks;
-    private int ultiTicksNeeded;
-
     // Movement
     public bool isMoving = false;
     public float moveVal;
@@ -83,11 +77,12 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
 
         fuel = maxFuel;
         health = maxHealth;
-        secondaryTicksNeeded = (int)(60 * secondaryWeapon.GetFireRate());
-        secondaryTicks = secondaryTicksNeeded;
 
-        ultiTicksNeeded = (int)(60 * ultimateWeapon.GetFireRate());
-        ultiTicks = ultiTicksNeeded;
+        secondaryWeapon.secondaryTicksNeeded = (int)(60f * secondaryWeapon.GetFireRate());
+        secondaryWeapon.secondaryTicks = 0;
+
+        ultimateWeapon.ultiTicksNeeded = (int)(60f * ultimateWeapon.GetFireRate());
+        ultimateWeapon.ultiTicks = 0;
     }
 
     // Update is called once per frame
@@ -174,15 +169,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     public void FirePrimary(InputAction.CallbackContext value)
     {
         weapon.FireAt(crosshair.transform);
-        playerEvents.firedPrimary.Invoke();
     }
 
     public void FireUltimate(InputAction.CallbackContext value)
     {
         ultimateWeapon.FireAt(crosshair.transform);
-        playerEvents.firedUltimate.Invoke();
-        ultiTicks = 0;
-        StartCoroutine(ultimateTick());
     }
 
     public void ReloadPrimary(InputAction.CallbackContext value)
@@ -195,18 +186,12 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     {
         Debug.Log("use consumable 1");
         secondaryWeapon.FireAt(crosshair.transform);
-        playerEvents.firedSecondary.Invoke();
-        secondaryTicks = 0;
-        StartCoroutine(secondaryTick());
     }
 
     public void UseConsumable2(InputAction.CallbackContext value)
     {
         Debug.Log("use consumable 2");
         secondaryWeapon.FireAt(crosshair.transform);
-        playerEvents.firedSecondary.Invoke();
-        secondaryTicks = 0;
-        StartCoroutine(secondaryTick());
     }
 
     public void AfflictDamage(DamageRequest req)
@@ -223,26 +208,9 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         }
     }
 
-    IEnumerator secondaryTick()
-    {
-        while (secondaryTicks < secondaryTicksNeeded)
-        {
-            secondaryTicks++;
-            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown
-                .Invoke(secondaryTicks, secondaryTicksNeeded);
-            yield return null;
-        }
-    }
+    
 
-    IEnumerator ultimateTick()
-    {
-        while (ultiTicks < ultiTicksNeeded)
-        {
-            ultiTicks++;
-            this.GetComponentInParent<PlayerEvents>().tickedPrimaryReload.Invoke(ultiTicks, ultiTicksNeeded);
-            yield return null;
-        }
-    }
+    
 
     // /// <summary>
     // /// Adding debuffs for float properties

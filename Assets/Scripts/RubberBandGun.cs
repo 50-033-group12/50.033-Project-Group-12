@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class RubberBandGun : ClippedPrimaryWeapon
 {
@@ -38,6 +39,8 @@ public class RubberBandGun : ClippedPrimaryWeapon
             
             nextFire = Time.time + GetFireRate();
             base.FireAt(target);
+            this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();
+            this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(GetClipRemaining(), ammoSource.GetCount());
         }
     }
 

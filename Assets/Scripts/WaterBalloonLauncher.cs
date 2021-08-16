@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class WaterBalloonLauncher : UltimateWeapon
 {
@@ -10,7 +11,7 @@ public class WaterBalloonLauncher : UltimateWeapon
     void Start()
     {
         nextFire = Time.time + GetFireRate();
-        // nextFire = Time.time;
+        StartCoroutine(ultimateTick());
     }
 
     // Update is called once per frame
@@ -44,6 +45,9 @@ public class WaterBalloonLauncher : UltimateWeapon
             m_Rigidbody.velocity = vel;
 
             nextFire = Time.time + GetFireRate();
+            this.GetComponentInParent<PlayerEvents>().firedUltimate.Invoke();
+            ultiTicks = 0;
+            StartCoroutine(ultimateTick());
         }
     }
 

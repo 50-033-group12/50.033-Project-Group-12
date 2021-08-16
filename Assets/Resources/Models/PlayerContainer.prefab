@@ -170,15 +170,51 @@ MonoBehaviour:
     m_ActionId: 4c62992c-a059-4d7c-b0b3-df567d4543f2
     m_ActionName: Player/FireUltimate[/XInputControllerWindows/leftTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459448787072039757}
+        m_TargetAssemblyTypeName: Tank, Assembly-CSharp
+        m_MethodName: UseConsumable1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: db7cbabe-fd9a-46fb-a92e-e88728888bf4
     m_ActionName: Player/UseConsumable1[/XInputControllerWindows/leftShoulder,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459448787072039757}
+        m_TargetAssemblyTypeName: Tank, Assembly-CSharp
+        m_MethodName: UseConsumable2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 37050df0-e703-4a6e-9559-1a0edb52aaf8
     m_ActionName: Player/UseConsumable2[/XInputControllerWindows/rightShoulder,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459448787072039757}
+        m_TargetAssemblyTypeName: Tank, Assembly-CSharp
+        m_MethodName: ReloadPrimary
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 96d50456-37f3-4ef6-86e9-86bcd9a319bb
     m_ActionName: Player/Reload[/XInputControllerWindows/buttonWest,/Mouse/leftButton]
   - m_PersistentCalls:

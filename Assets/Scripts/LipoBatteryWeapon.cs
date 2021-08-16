@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class LipoBatteryWeapon : UltimateWeapon
 {
@@ -10,6 +11,7 @@ public class LipoBatteryWeapon : UltimateWeapon
     void Start()
     {
         nextFire = Time.time + GetFireRate();
+        StartCoroutine(ultimateTick());
     }
 
     // Update is called once per frame
@@ -25,6 +27,9 @@ public class LipoBatteryWeapon : UltimateWeapon
             GameObject bulletShot = Instantiate(bomb, newPos, this.transform.rotation);
             
             nextFire = Time.time + GetFireRate();
+            this.GetComponentInParent<PlayerEvents>().firedUltimate.Invoke();
+            ultiTicks = 0;
+            StartCoroutine(ultimateTick());
         }
     }
 

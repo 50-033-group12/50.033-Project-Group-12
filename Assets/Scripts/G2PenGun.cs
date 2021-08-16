@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class G2PenGun : UltimateWeapon
 {
@@ -11,6 +12,7 @@ public class G2PenGun : UltimateWeapon
     void Start()
     {
         nextFire = Time.time + GetFireRate();
+        StartCoroutine(ultimateTick());
     }
 
     // Update is called once per frame
@@ -28,6 +30,9 @@ public class G2PenGun : UltimateWeapon
             m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
             
             nextFire = Time.time + GetFireRate();
+            this.GetComponentInParent<PlayerEvents>().firedUltimate.Invoke();
+            ultiTicks = 0;
+            StartCoroutine(ultimateTick());
         }
     }
 

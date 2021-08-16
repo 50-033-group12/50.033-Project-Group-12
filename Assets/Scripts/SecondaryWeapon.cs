@@ -6,9 +6,11 @@ using Events;
 public abstract class SecondaryWeapon : MonoBehaviour
 {
     public float nextFire;
+    public int secondaryTicks;
+    public int secondaryTicksNeeded;
 
     public bool IsReadyToFire(){
-        if(Time.time > nextFire){
+        if(Time.time >= nextFire){
             return true;
         }
         return false;
@@ -19,4 +21,15 @@ public abstract class SecondaryWeapon : MonoBehaviour
     public abstract float GetFireRate();
     public abstract float GetTurnRate();
     public abstract Events.SecondaryWeapon GetSecondaryWeaponType();
+
+    public IEnumerator secondaryTick()
+    {
+        while (secondaryTicks < secondaryTicksNeeded)
+        {
+            secondaryTicks++;
+            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown
+                .Invoke(secondaryTicks, secondaryTicksNeeded);
+            yield return null;
+        }
+    }
 }

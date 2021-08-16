@@ -13,6 +13,7 @@ public class StaplerGun : ClippedPrimaryWeapon
     {
         nextFire = Time.time;
         reloadTick = reloadTicksNeeded;
+        Reload();
     }
 
     // Update is called once per frame
@@ -39,6 +40,7 @@ public class StaplerGun : ClippedPrimaryWeapon
             
             nextFire = Time.time + GetFireRate();
             base.FireAt(target);
+            this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();
             this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(GetClipRemaining(), ammoSource.GetCount());
         }
     }
