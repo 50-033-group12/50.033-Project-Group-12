@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 941424673106360798}
   m_Layer: 0
   m_Name: Ruler
-  m_TagString: Untagged
+  m_TagString: ChangeColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,7 +823,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b4aad06a27032a469011e12f0fdc0cc, type: 2}
+  - {fileID: 2100000, guid: 381b26616b88fec47af34af00b35f095, type: 2}
   - {fileID: 2100000, guid: a5b86918b1bd1f344a9f117b58712290, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -913,8 +913,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941424673169791384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 8, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.337, z: 0.316}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 941424673106360799}
   - {fileID: 941424672963823525}

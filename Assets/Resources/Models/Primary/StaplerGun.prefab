@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5981073054331212287}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: ChangeColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
-  - {fileID: 2100000, guid: bc2f686fba68cdc43b3544925338c2b8, type: 2}
+  - {fileID: 2100000, guid: 381b26616b88fec47af34af00b35f095, type: 2}
   - {fileID: 2100000, guid: 3f9ad6419dfe4574ab7d09cefa3b6cf8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -585,7 +585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4641540123855696539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0550246, y: 1, z: 10.17}
+  m_LocalPosition: {x: 0, y: 0.269, z: 0.481}
   m_LocalScale: {x: 0.4, y: 0.39999998, z: 0.4}
   m_Children:
   - {fileID: 6079577670665262750}
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 4355265255374855084}
   m_Layer: 0
   m_Name: Back
-  m_TagString: Untagged
+  m_TagString: ChangeColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1611,7 +1611,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc2f686fba68cdc43b3544925338c2b8, type: 2}
+  - {fileID: 2100000, guid: 381b26616b88fec47af34af00b35f095, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
