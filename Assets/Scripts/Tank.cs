@@ -22,6 +22,7 @@ class SlowDebuff : Debuff<float>
         return false;
     }
 }
+
 public class Tank : MonoBehaviour, IDebuffable, IDamageable
 {
     // HP, Battery
@@ -51,10 +52,10 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     public bool moveCrosshair = false;
     public Vector3 moveCrossVal;
     public float maxRange = 50f;
-    
+
     // stunned
     private DebuffableProperty<bool> active = new DebuffableProperty<bool>(true);
-    
+
     // Events
     private PlayerEvents playerEvents;
 
@@ -63,7 +64,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     SecondaryWeapon secondaryWeapon;
     UltimateWeapon ultimateWeapon;
     Rigidbody rigidBody;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,106 +80,93 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         playerEvents.equippedPrimary.Invoke(weapon.GetPrimaryWeaponType());
         playerEvents.equippedSecondary.Invoke(secondaryWeapon.GetSecondaryWeaponType());
         playerEvents.equippedUltimate.Invoke(ultimateWeapon.GetUltimateWeaponType());
-        
+
         fuel = maxFuel;
         health = maxHealth;
-        secondaryTicksNeeded = (int) (60 * secondaryWeapon.GetFireRate());
+        secondaryTicksNeeded = (int)(60 * secondaryWeapon.GetFireRate());
         secondaryTicks = secondaryTicksNeeded;
 
-        ultiTicksNeeded = (int) (60 * ultimateWeapon.GetFireRate());
+        ultiTicksNeeded = (int)(60 * ultimateWeapon.GetFireRate());
         ultiTicks = ultiTicksNeeded;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isMoving){
-            if(fuel >= 0f){
-                transform.Translate(0, 0 ,moveVal * maxSpeed.GetFinalValue() * Time.deltaTime);
-            }
-            else{
-                transform.Translate(0, 0 ,moveVal * maxSpeed.GetFinalValue() * 0.5f * Time.deltaTime);
-            }
-            fuel -= Time.deltaTime;
-            playerEvents.fuelChanged.Invoke(fuel, maxFuel);
+        // put back after rotation
+        Vector3 oldPos = crosshair.transform.position;
+        var isStationary = !(isMoving || isRotating);
+        var emptyFuelPenalty = fuel >= 0f ? 1f : 0.5f;
+        var movementAmount = moveVal * maxSpeed.GetFinalValue() * emptyFuelPenalty * Time.deltaTime;
+        var rotationAmount = rotateVal * turnSpeed.GetFinalValue() * emptyFuelPenalty * Time.deltaTime;
+        if (isMoving) transform.Translate(0, 0, movementAmount);
+        if (isRotating) transform.Rotate(0, rotationAmount, 0);
+        crosshair.transform.position = oldPos;
+        if (isStationary)
+        {
+            var regenFuel = Time.deltaTime *
+                            (secondaryWeapon.GetSecondaryWeaponType() == Events.SecondaryWeapon.SolarPanel ? 3f : 1f);
+            fuel = Mathf.Clamp(fuel + regenFuel, 0, maxFuel);
         }
-        else{
-            if(secondaryWeapon.GetSecondaryWeaponType() == Events.SecondaryWeapon.SolarPanel){
-                fuel += 3f;
-                playerEvents.fuelChanged.Invoke(fuel, maxFuel);
-            }
-            else{
-                fuel += 1f;
-                playerEvents.fuelChanged.Invoke(fuel, maxFuel);
-            }
-        };
-
-        if(isRotating){
-            Vector3 oldPos = crosshair.transform.position;
-            crosshair.transform.position = oldPos;
-            if(fuel >= 0f){
-                transform.Rotate(0, rotateVal * turnSpeed.GetFinalValue() * Time.deltaTime, 0);   
-            }
-            else{
-                transform.Rotate(0, rotateVal * turnSpeed.GetFinalValue() * 0.5f * Time.deltaTime, 0);
-            }
-            fuel -= Time.deltaTime;
-            playerEvents.fuelChanged.Invoke(fuel, maxFuel);
+        else
+        {
+            fuel = Mathf.Clamp(fuel - Time.deltaTime, 0, maxFuel);
         }
-        else{
-            if(secondaryWeapon.GetSecondaryWeaponType() == Events.SecondaryWeapon.SolarPanel){
-                fuel += 3f;
-                playerEvents.fuelChanged.Invoke(fuel, maxFuel);
-            }
-            else{
-                fuel += 1f;
-                playerEvents.fuelChanged.Invoke(fuel, maxFuel);
-            }
-        };
 
-        if(moveCrosshair){
+        playerEvents.fuelChanged.Invoke(fuel, maxFuel);
+        if (moveCrosshair)
+        {
             crosshair.transform.position += moveCrossVal;
-            if(Vector3.Distance(this.transform.position, crosshair.transform.position + moveCrossVal) > maxRange){
+            if (Vector3.Distance(this.transform.position, crosshair.transform.position + moveCrossVal) > maxRange)
+            {
                 Vector3 direction = (this.transform.position - crosshair.transform.position).normalized;
-                crosshair.transform.position += direction * (Vector3.Distance(this.transform.position, crosshair.transform.position) - maxRange);
+                crosshair.transform.position += direction *
+                                                (Vector3.Distance(this.transform.position,
+                                                    crosshair.transform.position) - maxRange);
             }
         }
+
         weapon.LookAt(crosshair.transform.position);
         ultimateWeapon.LookAt(crosshair.transform.position);
     }
 
     public void ThrottleTank(InputAction.CallbackContext value)
     {
-        if(value.phase == InputActionPhase.Performed){
+        if (value.phase == InputActionPhase.Performed)
+        {
             isMoving = true;
             moveVal = value.ReadValue<Vector2>().y;
         }
-        else if(value.phase == InputActionPhase.Canceled){
+        else if (value.phase == InputActionPhase.Canceled)
+        {
             isMoving = false;
         }
     }
 
     public void RotateTank(InputAction.CallbackContext value)
     {
-        if(value.phase == InputActionPhase.Performed){
+        if (value.phase == InputActionPhase.Performed)
+        {
             isRotating = true;
             rotateVal = value.ReadValue<Vector2>().x;
         }
-        else if(value.phase == InputActionPhase.Canceled){
+        else if (value.phase == InputActionPhase.Canceled)
+        {
             isRotating = false;
         }
     }
 
     public void MoveCrosshair(InputAction.CallbackContext value)
     {
-        if(value.phase == InputActionPhase.Performed){
+        if (value.phase == InputActionPhase.Performed)
+        {
             moveCrosshair = true;
             float x = value.ReadValue<Vector2>().x;
             float y = value.ReadValue<Vector2>().y;
-            moveCrossVal = new Vector3(x,0,y);
+            moveCrossVal = new Vector3(x, 0, y);
         }
-        else if(value.phase == InputActionPhase.Canceled){
+        else if (value.phase == InputActionPhase.Canceled)
+        {
             moveCrosshair = false;
         }
     }
@@ -221,27 +209,35 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         StartCoroutine(secondaryTick());
     }
 
-    public void AfflictDamage(DamageRequest req){
-        if(health >= req.damage){
+    public void AfflictDamage(DamageRequest req)
+    {
+        if (health >= req.damage)
+        {
             health -= req.damage;
             playerEvents.hpChanged.Invoke(health, maxHealth);
         }
-        else{
+        else
+        {
             health = 0f;
             playerEvents.hpChanged.Invoke(health, maxHealth);
         }
     }
 
-    IEnumerator secondaryTick(){
-        while(secondaryTicks < secondaryTicksNeeded){
+    IEnumerator secondaryTick()
+    {
+        while (secondaryTicks < secondaryTicksNeeded)
+        {
             secondaryTicks++;
-            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown.Invoke(secondaryTicks, secondaryTicksNeeded);
+            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown
+                .Invoke(secondaryTicks, secondaryTicksNeeded);
             yield return null;
         }
     }
 
-    IEnumerator ultimateTick(){
-        while(ultiTicks < ultiTicksNeeded){
+    IEnumerator ultimateTick()
+    {
+        while (ultiTicks < ultiTicksNeeded)
+        {
             ultiTicks++;
             this.GetComponentInParent<PlayerEvents>().tickedPrimaryReload.Invoke(ultiTicks, ultiTicksNeeded);
             yield return null;
@@ -293,7 +289,8 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             if (property == DebuffableProperties.MOVEMENT_SPEED)
             {
                 maxSpeed.AddDebuff(debuff as Debuff<float>);
-            }else if (property == DebuffableProperties.ROTATION_SPEED)
+            }
+            else if (property == DebuffableProperties.ROTATION_SPEED)
             {
                 turnSpeed.AddDebuff(debuff as Debuff<float>);
             }

@@ -2769,9 +2769,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92270034738c89849a4d63f5ed213e15, type: 2}
   _secondaryWeaponsAvailable:
   - {fileID: 11400000, guid: 76b82cb971621bf419c6788c66a24245, type: 2}
-  - {fileID: 11400000, guid: 5fa3406226ae3aa49a5185fd7e92b7bc, type: 2}
   - {fileID: 11400000, guid: ede3a6498c5deff45b425c2781de4b91, type: 2}
-  - {fileID: 11400000, guid: 9c90869e65ea29d41b02c323e9d210a5, type: 2}
   _ultimateWeaponsAvailable:
   - {fileID: 11400000, guid: 5dcf31893ad681a42a18ccc495b61b32, type: 2}
   - {fileID: 11400000, guid: ba262061977323c4bb300d3d17638b52, type: 2}

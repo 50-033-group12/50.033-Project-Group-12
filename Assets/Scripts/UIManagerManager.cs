@@ -25,13 +25,11 @@ public class UIManagerManager : MonoBehaviour
         if (playerId == 1)
         {
             return player1UI;
-        }else if (playerId == 2)
+        }
+        if (playerId == 2)
         {
             return player2UI;
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 }

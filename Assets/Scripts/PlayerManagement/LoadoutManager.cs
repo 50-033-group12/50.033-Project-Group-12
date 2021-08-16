@@ -46,7 +46,6 @@ public static class LoadoutManager
 
     public static Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> GetPlayerLoadout(int playerId)
     {
-        Debug.Log(playerId);
         return new Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>(_playerPrimaryWeapons[playerId], _playerSecondaryWeapons[playerId], _playerUltimateWeapons[playerId]);
     }
 
