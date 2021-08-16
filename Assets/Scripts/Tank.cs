@@ -25,7 +25,8 @@ class SlowDebuff : Debuff<float>
 public class Tank : MonoBehaviour, IDebuffable, IDamageable
 {
     // HP, Battery
-    private float health = 150f;
+    private float health;
+    private float maxHealth = 150f;
     private float fuel;
     private float maxFuel = 45f;
 
@@ -80,6 +81,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         playerEvents.equippedUltimate.Invoke(ultimateWeapon.GetUltimateWeaponType());
         
         fuel = maxFuel;
+        health = maxHealth;
         secondaryTicksNeeded = (int) (60 * secondaryWeapon.GetFireRate());
         secondaryTicks = secondaryTicksNeeded;
 
@@ -222,10 +224,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     public void AfflictDamage(DamageRequest req){
         if(health >= req.damage){
             health -= req.damage;
-            // fire event here
+            playerEvents.hpChanged.Invoke(health, maxHealth);
         }
         else{
             health = 0f;
+            playerEvents.hpChanged.Invoke(health, maxHealth);
         }
     }
 
