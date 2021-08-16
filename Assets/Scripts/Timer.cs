@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public Text timer;
     // 2 mins
-    public float timeRemaining = 121f;
+    public float timeRemaining = 181f;
     float minutes;
     float seconds;
     

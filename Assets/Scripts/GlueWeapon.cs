@@ -45,4 +45,7 @@ public class GlueWeapon : SecondaryWeapon
     {
         return 5f;
     }
+    public override Events.SecondaryWeapon GetSecondaryWeaponType(){
+        return Events.SecondaryWeapon.Glue;
+    }
 }

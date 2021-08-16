@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class StaplerGun : ClippedPrimaryWeapon
 {
@@ -11,7 +12,7 @@ public class StaplerGun : ClippedPrimaryWeapon
     void Start()
     {
         nextFire = Time.time;
-        Reload();
+        reloadTick = reloadTicksNeeded;
     }
 
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class StaplerGun : ClippedPrimaryWeapon
             
             nextFire = Time.time + GetFireRate();
             base.FireAt(target);
+            this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(GetClipRemaining(), ammoSource.GetCount());
         }
     }
 
@@ -56,4 +58,7 @@ public class StaplerGun : ClippedPrimaryWeapon
         return 10;
     }
 
+    public override Events.PrimaryWeapon GetPrimaryWeaponType(){
+        return Events.PrimaryWeapon.StaplerGun;
+    }
 }

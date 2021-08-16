@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public abstract class PrimaryWeapon : MonoBehaviour
 {
@@ -21,4 +22,8 @@ public abstract class PrimaryWeapon : MonoBehaviour
     public abstract void LookAt(Vector3 target);
     public abstract float GetFireRate();
     public abstract float GetTurnRate();
+    public abstract Events.PrimaryWeapon GetPrimaryWeaponType();
+    public virtual void Reload(){
+        Debug.Log("Reload of base class");
+    }
 }

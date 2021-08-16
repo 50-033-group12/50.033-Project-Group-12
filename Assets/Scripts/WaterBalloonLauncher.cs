@@ -62,4 +62,7 @@ public class WaterBalloonLauncher : UltimateWeapon
     public float GetTurnRate(){
         return 5f;
     }
+    public override Events.UltimateWeapon GetUltimateWeaponType(){
+        return Events.UltimateWeapon.WaterBalloon;
+    }
 }

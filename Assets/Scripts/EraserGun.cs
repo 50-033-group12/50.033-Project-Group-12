@@ -63,4 +63,8 @@ public class EraserGun : PrimaryWeapon
     {
         return 2f;
     }
+
+    public override Events.PrimaryWeapon GetPrimaryWeaponType(){
+        return Events.PrimaryWeapon.EraserGun;
+    }
 }

@@ -55,4 +55,8 @@ public class RubberBandGun : ClippedPrimaryWeapon
     {
         return 5;
     }
+
+    public override Events.PrimaryWeapon GetPrimaryWeaponType(){
+        return Events.PrimaryWeapon.RubberBandGun;
+    }
 }

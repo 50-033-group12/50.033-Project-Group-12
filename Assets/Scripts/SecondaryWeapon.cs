@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public abstract class SecondaryWeapon : MonoBehaviour
 {
@@ -17,4 +18,5 @@ public abstract class SecondaryWeapon : MonoBehaviour
     public abstract void LookAt(Vector3 target);
     public abstract float GetFireRate();
     public abstract float GetTurnRate();
+    public abstract Events.SecondaryWeapon GetSecondaryWeaponType();
 }
