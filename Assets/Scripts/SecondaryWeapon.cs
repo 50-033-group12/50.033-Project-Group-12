@@ -6,8 +6,8 @@ using Events;
 public abstract class SecondaryWeapon : MonoBehaviour
 {
     public float nextFire;
-    public int secondaryTicks;
-    public int secondaryTicksNeeded;
+    public float secondaryTicks;
+    public float secondaryTicksNeeded;
 
     public bool IsReadyToFire(){
         if(Time.time >= nextFire){
@@ -26,10 +26,9 @@ public abstract class SecondaryWeapon : MonoBehaviour
     {
         while (secondaryTicks < secondaryTicksNeeded)
         {
-            secondaryTicks++;
-            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown
-                .Invoke(secondaryTicks, secondaryTicksNeeded);
-            yield return null;
+            secondaryTicks+=1f;
+            this.GetComponentInParent<PlayerEvents>().tickedSecondaryCooldown.Invoke((int) secondaryTicks, (int) secondaryTicksNeeded);
+            yield return new WaitForSeconds(1);
         }
     }
 }

@@ -6,8 +6,8 @@ using Events;
 public abstract class UltimateWeapon : MonoBehaviour
 {
     public float nextFire;
-    public int ultiTicks;
-    public int ultiTicksNeeded;
+    public float ultiTicks;
+    public float ultiTicksNeeded;
 
     public bool IsReadyToFire(){
         if(Time.time > nextFire){
@@ -25,8 +25,8 @@ public abstract class UltimateWeapon : MonoBehaviour
         while (ultiTicks < ultiTicksNeeded)
         {
             ultiTicks++;
-            this.GetComponentInParent<PlayerEvents>().tickedUltimateCooldown.Invoke(ultiTicks, ultiTicksNeeded);
-            yield return null;
+            this.GetComponentInParent<PlayerEvents>().tickedUltimateCooldown.Invoke((int) ultiTicks, (int) ultiTicksNeeded);
+            yield return new WaitForSeconds(1);
         }
     }
 }

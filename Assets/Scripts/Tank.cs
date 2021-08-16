@@ -78,11 +78,11 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         fuel = maxFuel;
         health = maxHealth;
 
-        secondaryWeapon.secondaryTicksNeeded = (int)(60f * secondaryWeapon.GetFireRate());
-        secondaryWeapon.secondaryTicks = 0;
+        secondaryWeapon.secondaryTicksNeeded = secondaryWeapon.GetFireRate();
+        secondaryWeapon.secondaryTicks = 0f;
 
-        ultimateWeapon.ultiTicksNeeded = (int)(60f * ultimateWeapon.GetFireRate());
-        ultimateWeapon.ultiTicks = 0;
+        ultimateWeapon.ultiTicksNeeded = ultimateWeapon.GetFireRate();
+        ultimateWeapon.ultiTicks = 0f;
     }
 
     // Update is called once per frame
