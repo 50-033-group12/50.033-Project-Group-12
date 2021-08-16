@@ -184,13 +184,13 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
 
     public void UseConsumable1(InputAction.CallbackContext value)
     {
-        Debug.Log("use consumable 1");
+        // Debug.Log("use consumable 1");
         secondaryWeapon.FireAt(crosshair.transform);
     }
 
     public void UseConsumable2(InputAction.CallbackContext value)
     {
-        Debug.Log("use consumable 2");
+        // Debug.Log("use consumable 2");
         secondaryWeapon.FireAt(crosshair.transform);
     }
 
@@ -207,10 +207,6 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             playerEvents.hpChanged.Invoke(health, maxHealth);
         }
     }
-
-    
-
-    
 
     // /// <summary>
     // /// Adding debuffs for float properties

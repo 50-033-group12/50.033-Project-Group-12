@@ -33,7 +33,8 @@ public class RubberBandGun : ClippedPrimaryWeapon
         if(IsReadyToFire() && GetClipRemaining() > 0){
             // Instantiate bullet
             GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
-            
+            bulletShot.GetComponent<RubberBandProjectile>().shotFrom = this.transform.parent.Find("Thymio 1/Body").gameObject;
+
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
             

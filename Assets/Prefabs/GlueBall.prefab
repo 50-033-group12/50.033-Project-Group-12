@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5486363742513121585}
   - component: {fileID: 7290616963202916916}
   - component: {fileID: -2635971706174801938}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GlueBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

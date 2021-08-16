@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7136393379459334777}
   - component: {fileID: 9199996471934688917}
   - component: {fileID: 915030799231712017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: G2Pen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0797dafd5a0f449b56ab0f21e11c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 100
 --- !u!54 &915030799231712017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ GameObject:
   - component: {fileID: 2550212715675144321}
   - component: {fileID: 4264709096122242081}
   - component: {fileID: 6503127829582092240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1936089671741046093}
   - component: {fileID: -4689318990594260900}
   - component: {fileID: -1303255887287478195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WaterBalloonAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

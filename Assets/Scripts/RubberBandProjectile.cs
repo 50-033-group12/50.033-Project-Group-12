@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RubberBandProjectile : MonoBehaviour
 {
+    public GameObject shotFrom;
     public float damage = 20;
     void Start()
     {
@@ -16,13 +17,15 @@ public class RubberBandProjectile : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider col){
-        if (col.tag == "player"){
-            DamageRequest req = new DamageRequest(damage, false, this.gameObject);
-            col.GetComponent<IDamageable>().AfflictDamage(req);
-            Destroy(gameObject);
-        }
-        else if(col.tag == "Ground" || col.tag == "Obstacles"){
-            Destroy(gameObject);
+        if(col.gameObject != shotFrom){
+            if (col.tag == "Player"){
+                DamageRequest req = new DamageRequest(damage, false, this.gameObject);
+                col.GetComponentInParent<IDamageable>().AfflictDamage(req);
+                Destroy(gameObject);
+            }
+            else if(col.tag == "Ground" || col.tag == "Obstacles"){
+                Destroy(gameObject);
+            }
         }
     }
 

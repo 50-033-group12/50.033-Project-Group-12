@@ -37,6 +37,7 @@ public class EraserGun : PrimaryWeapon
         if(IsReadyToFire() && ammoSource.GetCount() > 0){
             // Instantiate bullet
             GameObject bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            bulletShot.GetComponent<EraserGunProjectile>().shotFrom = this.transform.parent.Find("Thymio 1/Body").gameObject;            
             
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             Vector3 vel = calcBallisticVelocityVector(this.transform, target, 60f);
