@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 3510139178473463998}
   - component: {fileID: 8582613969701050788}
   - component: {fileID: 5207275759572467280}
-  - component: {fileID: 7164895253664197813}
   m_Layer: 0
   m_Name: Cone
   m_TagString: ChangeColour
@@ -1046,20 +1045,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758474408493608501}
   m_Mesh: {fileID: 0}
---- !u!64 &7164895253664197813
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758474408493608501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6495574117033318051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1058,6 @@ GameObject:
   - component: {fileID: 459653422205481165}
   - component: {fileID: 4104544535408318602}
   - component: {fileID: 1983006320364685784}
-  - component: {fileID: 8854525576262472455}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: ChangeColour
@@ -9690,18 +9674,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495574117033318051}
-  m_Mesh: {fileID: 0}
---- !u!64 &8854525576262472455
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6495574117033318051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

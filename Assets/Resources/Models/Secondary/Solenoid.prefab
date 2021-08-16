@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4830667496790799291}
   - component: {fileID: 2415721966766896661}
   - component: {fileID: 7343518615899647019}
-  - component: {fileID: 1570953918552647158}
   m_Layer: 0
   m_Name: Torus (11)
   m_TagString: Untagged
@@ -6873,20 +6872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473930191545401695}
   m_Mesh: {fileID: 0}
---- !u!64 &1570953918552647158
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473930191545401695}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &863612040235925436
 GameObject:
   m_ObjectHideFlags: 0
@@ -6900,7 +6885,6 @@ GameObject:
   - component: {fileID: 3698243613212219752}
   - component: {fileID: 5260473291332808624}
   - component: {fileID: 9061907993560649671}
-  - component: {fileID: 1269580767868659351}
   m_Layer: 0
   m_Name: Torus (8)
   m_TagString: Untagged
@@ -13760,20 +13744,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863612040235925436}
   m_Mesh: {fileID: 0}
---- !u!64 &1269580767868659351
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863612040235925436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1719990857692090403
 GameObject:
   m_ObjectHideFlags: 0
@@ -13787,7 +13757,6 @@ GameObject:
   - component: {fileID: 1142823105553059941}
   - component: {fileID: 3082570564020831658}
   - component: {fileID: 7513924697200377254}
-  - component: {fileID: 870100960938838219}
   m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
@@ -20647,20 +20616,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719990857692090403}
   m_Mesh: {fileID: 0}
---- !u!64 &870100960938838219
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719990857692090403}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1746125477586162997
 GameObject:
   m_ObjectHideFlags: 0
@@ -20674,7 +20629,6 @@ GameObject:
   - component: {fileID: 3430419252801347333}
   - component: {fileID: 6878602574693421561}
   - component: {fileID: 1351057286601131156}
-  - component: {fileID: 6139520759622097244}
   m_Layer: 0
   m_Name: Torus (6)
   m_TagString: Untagged
@@ -27534,20 +27488,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746125477586162997}
   m_Mesh: {fileID: 0}
---- !u!64 &6139520759622097244
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746125477586162997}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1869497272591782856
 GameObject:
   m_ObjectHideFlags: 0
@@ -27561,7 +27501,6 @@ GameObject:
   - component: {fileID: 4747326979727294684}
   - component: {fileID: 1302694139162445122}
   - component: {fileID: 2974655053654895639}
-  - component: {fileID: 8648639139310146030}
   m_Layer: 0
   m_Name: Torus (1)
   m_TagString: Untagged
@@ -34421,20 +34360,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869497272591782856}
   m_Mesh: {fileID: 0}
---- !u!64 &8648639139310146030
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869497272591782856}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2318345090662857575
 GameObject:
   m_ObjectHideFlags: 0
@@ -34448,7 +34373,6 @@ GameObject:
   - component: {fileID: 6227205162670569062}
   - component: {fileID: 5303218340396506347}
   - component: {fileID: 3178865610612427917}
-  - component: {fileID: 4202524579348075187}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -35915,20 +35839,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2318345090662857575}
   m_Mesh: {fileID: 0}
---- !u!64 &4202524579348075187
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2318345090662857575}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2387867481285393426
 GameObject:
   m_ObjectHideFlags: 0
@@ -35942,7 +35852,6 @@ GameObject:
   - component: {fileID: 8030985737260377517}
   - component: {fileID: 2969455691693822433}
   - component: {fileID: 1078947414523962315}
-  - component: {fileID: 8842483775268644234}
   m_Layer: 0
   m_Name: Torus (4)
   m_TagString: Untagged
@@ -42802,20 +42711,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2387867481285393426}
   m_Mesh: {fileID: 0}
---- !u!64 &8842483775268644234
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387867481285393426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2464339050981662841
 GameObject:
   m_ObjectHideFlags: 0
@@ -42829,7 +42724,6 @@ GameObject:
   - component: {fileID: 4432142836025869653}
   - component: {fileID: 1779157989130213994}
   - component: {fileID: 7627507742952955490}
-  - component: {fileID: 6510057610330581772}
   m_Layer: 0
   m_Name: Torus (5)
   m_TagString: Untagged
@@ -49689,20 +49583,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2464339050981662841}
   m_Mesh: {fileID: 0}
---- !u!64 &6510057610330581772
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464339050981662841}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2669389430250607038
 GameObject:
   m_ObjectHideFlags: 0
@@ -49716,7 +49596,6 @@ GameObject:
   - component: {fileID: 6008424114672835033}
   - component: {fileID: 6373006653997046495}
   - component: {fileID: 53482933398927982}
-  - component: {fileID: 2113616771389736214}
   m_Layer: 0
   m_Name: Torus (3)
   m_TagString: Untagged
@@ -56576,20 +56455,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2669389430250607038}
   m_Mesh: {fileID: 0}
---- !u!64 &2113616771389736214
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2669389430250607038}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3407903105165293543
 GameObject:
   m_ObjectHideFlags: 0
@@ -56603,7 +56468,6 @@ GameObject:
   - component: {fileID: 2457562756748094982}
   - component: {fileID: 5804337151168372499}
   - component: {fileID: 1854654386108514425}
-  - component: {fileID: 4649360291800420681}
   m_Layer: 0
   m_Name: Torus (12)
   m_TagString: Untagged
@@ -63463,20 +63327,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3407903105165293543}
   m_Mesh: {fileID: 0}
---- !u!64 &4649360291800420681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3407903105165293543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3872436779190322044
 GameObject:
   m_ObjectHideFlags: 0
@@ -63490,7 +63340,6 @@ GameObject:
   - component: {fileID: 5005628894144039728}
   - component: {fileID: 1868645722004555715}
   - component: {fileID: 5668705825453601156}
-  - component: {fileID: 7585002949252532618}
   m_Layer: 0
   m_Name: Torus (9)
   m_TagString: Untagged
@@ -70350,20 +70199,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3872436779190322044}
   m_Mesh: {fileID: 0}
---- !u!64 &7585002949252532618
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872436779190322044}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4587835868378534220
 GameObject:
   m_ObjectHideFlags: 0
@@ -70421,7 +70256,6 @@ GameObject:
   - component: {fileID: 8402479525964283730}
   - component: {fileID: 7254771417876717765}
   - component: {fileID: 7013736316812055058}
-  - component: {fileID: 1939939501430727650}
   m_Layer: 0
   m_Name: Torus (7)
   m_TagString: Untagged
@@ -77281,20 +77115,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728615629734089631}
   m_Mesh: {fileID: 0}
---- !u!64 &1939939501430727650
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6728615629734089631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6812870046584713778
 GameObject:
   m_ObjectHideFlags: 0
@@ -77308,7 +77128,6 @@ GameObject:
   - component: {fileID: 8832384456679690243}
   - component: {fileID: 1633991429003184718}
   - component: {fileID: 5642294511738218036}
-  - component: {fileID: 2652055629138269862}
   m_Layer: 0
   m_Name: Torus (10)
   m_TagString: Untagged
@@ -84168,20 +83987,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812870046584713778}
   m_Mesh: {fileID: 0}
---- !u!64 &2652055629138269862
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812870046584713778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &6950894562548816587
 GameObject:
   m_ObjectHideFlags: 0
@@ -84195,7 +84000,6 @@ GameObject:
   - component: {fileID: 8451743455645863365}
   - component: {fileID: 5031234579867462869}
   - component: {fileID: 4304726406415038540}
-  - component: {fileID: 2654375894260921156}
   m_Layer: 0
   m_Name: Torus (2)
   m_TagString: Untagged
@@ -91054,18 +90858,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950894562548816587}
-  m_Mesh: {fileID: 0}
---- !u!64 &2654375894260921156
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6950894562548816587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
