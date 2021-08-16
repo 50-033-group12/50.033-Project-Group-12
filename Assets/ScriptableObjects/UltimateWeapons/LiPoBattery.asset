@@ -17,3 +17,4 @@ MonoBehaviour:
     damaging all thymios in the vicinity
   icon: {fileID: 21300000, guid: 4504978d99f9e6a4eaa8208b7559c8bc, type: 3}
   cooldown: 15
+  ultimateWeaponEnum: 2

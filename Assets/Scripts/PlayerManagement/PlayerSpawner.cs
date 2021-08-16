@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -19,6 +20,17 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         ReloadPrefabs();
+        Vector3[] spawnPositions = new[]
+        {
+            new Vector3(-20, 0, 30),
+            new Vector3(-20, 0, -40)
+        };
+        for (int i = 1; i <= 2; i++)
+        {
+            Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> playerLoadout = LoadoutManager.GetPlayerLoadout(i);
+            var player = SpawnPlayer(i, playerLoadout);
+            player.transform.position = spawnPositions[i-1];
+        }
     }
 
     public void ReloadPrefabs()
@@ -74,7 +86,7 @@ public class PlayerSpawner : MonoBehaviour
         // create ultimate
         Instantiate(_ultimateWeaponPrefabs[loadout.Item3], player.transform);
         player.name = $"Player {playerId}";
-        var inputActions = player.GetComponent<PlayerInput>();
+        var tank = player.GetComponent<Tank>();
         return player;
     }
 }

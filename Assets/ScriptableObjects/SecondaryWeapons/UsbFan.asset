@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Boost your speed temporarily
   icon: {fileID: 21300000, guid: f35c0e1278f006b4881184005ce37199, type: 3}
   cooldown: 15
+  secondaryWeaponEnum: 5

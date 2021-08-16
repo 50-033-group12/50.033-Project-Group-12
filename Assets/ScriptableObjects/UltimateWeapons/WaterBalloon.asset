@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Drops a water balloon at the target, slowing enemies in the area
   icon: {fileID: 21300000, guid: 9069a27e2a217b545bb61d8eb83c144c, type: 3}
   cooldown: 60
+  ultimateWeaponEnum: 3

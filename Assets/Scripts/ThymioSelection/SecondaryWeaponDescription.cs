@@ -7,5 +7,6 @@ namespace ThymioSelection
     public class SecondaryWeaponDescription : ItemDescription
     {
         public int cooldown;
+        public Events.SecondaryWeapon secondaryWeaponEnum;
     }
 }

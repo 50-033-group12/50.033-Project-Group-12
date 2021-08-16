@@ -18,5 +18,6 @@ namespace ThymioSelection
         public int fireRate;
         public int reloadTime;
         public DamageCategory damage;
+        public Events.PrimaryWeapon primaryWeaponEnum;
     }
 }

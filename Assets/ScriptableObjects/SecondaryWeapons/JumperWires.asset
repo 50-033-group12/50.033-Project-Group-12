@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Shorts yourself, removing all debuffs.
   icon: {fileID: 21300000, guid: f7c81ca57f4d1da4b8da1a7d0a742d0d, type: 3}
   cooldown: 45
+  secondaryWeaponEnum: 8

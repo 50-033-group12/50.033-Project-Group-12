@@ -6,5 +6,6 @@ namespace ThymioSelection
     public class UltimateWeaponDescription : ItemDescription
     {
         public int cooldown;
+        public Events.UltimateWeapon ultimateWeaponEnum;
     }
 }

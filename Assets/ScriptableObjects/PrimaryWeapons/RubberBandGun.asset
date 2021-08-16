@@ -22,3 +22,4 @@ MonoBehaviour:
   fireRate: 6
   reloadTime: 5
   damage: 1
+  primaryWeaponEnum: 1

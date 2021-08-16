@@ -16,3 +16,4 @@ MonoBehaviour:
   description: High damage projectile weapon that travels in a straight line
   icon: {fileID: 21300000, guid: 8d1c7b8897e980643bc154ed24616c25, type: 3}
   cooldown: 0
+  ultimateWeaponEnum: 1
