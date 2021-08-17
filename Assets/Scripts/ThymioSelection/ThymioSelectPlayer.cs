@@ -30,6 +30,7 @@ namespace ThymioSelection
         private int _chosenUltimateIndex = 0;
         private int _chosenColorIndex = 0;
         private bool _playerReady = false;
+        private GameObject _playerPreview;
 
         public PrimaryWeaponDescription ChosenPrimary
         {
@@ -163,19 +164,19 @@ namespace ThymioSelection
             _activeColumn = (int)Mathf.Clamp(_activeColumn + value.x, 0, 3);
             if (_activeColumn == 0)
             {
-                _chosenPrimaryIndex = _chosenPrimaryIndex + (int)  value.y;
+                _chosenPrimaryIndex = _chosenPrimaryIndex + (int)value.y;
             }
             else if (_activeColumn == 1)
             {
-                _chosenSecondaryIndex = _chosenSecondaryIndex + (int)  value.y;
+                _chosenSecondaryIndex = _chosenSecondaryIndex + (int)value.y;
             }
             else if (_activeColumn == 2)
             {
-                _chosenUltimateIndex = _chosenUltimateIndex + (int)  value.y;
+                _chosenUltimateIndex = _chosenUltimateIndex + (int)value.y;
             }
             else if (_activeColumn == 3)
             {
-                _chosenColorIndex = _chosenColorIndex + (int)  value.y;
+                _chosenColorIndex = _chosenColorIndex + (int)value.y;
             }
 
             RedrawGUI();
@@ -190,6 +191,11 @@ namespace ThymioSelection
                 currentImage.transform.localScale = Vector3.one;
             }
 
+            if (_playerPreview != null)
+            {
+                Destroy(_playerPreview);
+            }
+
             colorPreview.color = ChosenColor;
             LeanTween.cancel(colorPreview.gameObject);
             colorPreview.transform.localScale = Vector3.one;
@@ -199,7 +205,8 @@ namespace ThymioSelection
                 var currentImage = equipmentBackgrounds[_activeColumn];
                 LeanTween.scaleX(currentImage, 1.5f, 0.5f).setLoopPingPong();
                 LeanTween.scaleY(currentImage, 1.5f, 0.5f).setLoopPingPong();
-            }else if (_activeColumn == 3)
+            }
+            else if (_activeColumn == 3)
             {
                 var currentImage = colorPreview.gameObject;
                 LeanTween.scaleX(currentImage, 1.5f, 0.5f).setLoopPingPong();
@@ -229,6 +236,16 @@ namespace ThymioSelection
             primaryIconContainer.sprite = ChosenPrimary.icon;
             secondaryIconContainer.sprite = ChosenSecondary.icon;
             ultimateIconContainer.sprite = ChosenUltimate.icon;
+
+            _playerPreview = GetComponent<PlayerPreviewSpawner>().SpawnPlayerPreview(playerId,
+                new Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>(
+                    ChosenPrimary.primaryWeaponEnum,
+                    ChosenSecondary.secondaryWeaponEnum,
+                    ChosenUltimate.ultimateWeaponEnum
+                ));
+            var painter = _playerPreview.GetComponent<TankPainter>();
+            painter.CloneMaterials();
+            painter.PaintTeamColors(ChosenColor);
         }
 
         public Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> GetLoadout()
