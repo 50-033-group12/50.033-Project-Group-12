@@ -15,6 +15,7 @@ public static class LoadoutManager
         _playerPrimaryWeapons = new Dictionary<int, Events.PrimaryWeapon>();
         _playerSecondaryWeapons = new Dictionary<int, Events.SecondaryWeapon>();
         _playerUltimateWeapons = new Dictionary<int, Events.UltimateWeapon>();
+        _playerColors = new Dictionary<int, Color>();
     }
 
     private static Dictionary<int, InputDevice> _playerDevices;
@@ -24,6 +25,8 @@ public static class LoadoutManager
     private static Dictionary<int, Events.SecondaryWeapon> _playerSecondaryWeapons;
 
     private static Dictionary<int, Events.UltimateWeapon> _playerUltimateWeapons;
+
+    private static Dictionary<int, Color> _playerColors;
 
     public static void JoinPlayer(int playerId, InputDevice device)
     {
@@ -45,6 +48,11 @@ public static class LoadoutManager
         _playerUltimateWeapons.Add(playerId, ultimateWeapon);
     }
 
+    public static void ChooseColor(int playerId, Color color)
+    {
+        _playerColors.Add(playerId, color);
+    }
+
     public static Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon>
         GetPlayerLoadout(int playerId)
     {
@@ -62,11 +70,17 @@ public static class LoadoutManager
         return _playerDevices[playerId];
     }
 
+    public static Color GetPlayerColor(int playerId)
+    {
+        return _playerColors[playerId];
+    }
+
     public static void Reset()
     {
         _playerDevices.Clear();
         _playerPrimaryWeapons.Clear();
         _playerSecondaryWeapons.Clear();
         _playerUltimateWeapons.Clear();
+        _playerColors.Clear();
     }
 }
