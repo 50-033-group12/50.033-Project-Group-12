@@ -6,7 +6,7 @@ using Events;
 public class RubberBandGun : ClippedPrimaryWeapon
 {
     public GameObject bullet;
-    public float bulletSpeed = 8f;
+    private readonly float _bulletSpeed = 30f;
 
 
     public override void LookAt(Vector3 target){
@@ -24,7 +24,8 @@ public class RubberBandGun : ClippedPrimaryWeapon
             bulletShot.GetComponent<RubberBandProjectile>().shotFrom = this.transform.parent.Find("Thymio 1/Body").gameObject;
 
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
-            m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
+            m_Rigidbody.AddForce(this.transform.forward * _bulletSpeed, ForceMode.Impulse);
+            m_Rigidbody.AddTorque(this.transform.forward * Random.Range(0, 2f), ForceMode.Impulse);
             
             base.FireAt(target);
             this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();

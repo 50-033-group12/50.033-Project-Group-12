@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotFrom: {fileID: 0}
-  damage: 15
+  damage: 5
 --- !u!54 &8218767826973400183
 Rigidbody:
   m_ObjectHideFlags: 0
