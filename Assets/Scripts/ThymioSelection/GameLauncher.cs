@@ -29,9 +29,10 @@ namespace ThymioSelection
 
                 LoadoutManager.JoinPlayer(2, player2Selection.GetComponent<PlayerInput>().devices[0]);
 
-                LoadoutManager.ChoosePrimary(2, player1Loadout.Item1);
-                LoadoutManager.ChooseSecondary(2, player1Loadout.Item2);
-                LoadoutManager.ChooseUltimate(2, player1Loadout.Item3);
+                var player2Loadout = player2Selection.GetLoadout();
+                LoadoutManager.ChoosePrimary(2, player2Loadout.Item1);
+                LoadoutManager.ChooseSecondary(2, player2Loadout.Item2);
+                LoadoutManager.ChooseUltimate(2, player2Loadout.Item3);
 
                 CurtainController.GetInstance().CloseCurtain(() =>
                 {

@@ -67,7 +67,6 @@ namespace PlayerManagement
 
         public GameObject SpawnPlayer(int playerId, Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> loadout)
         {
-
             // create thymio body
             var player = Instantiate(_playerContainerPrefab);
 
