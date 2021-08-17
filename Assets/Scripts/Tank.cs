@@ -172,7 +172,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             moveCrosshair = true;
             float x = value.ReadValue<Vector2>().x;
             float y = value.ReadValue<Vector2>().y;
-            moveCrossVal = new Vector3(x, 0, y) * 0.02f;
+            moveCrossVal = new Vector3(x, 0, y) * 0.5f;
         }
         else if (value.phase == InputActionPhase.Canceled)
         {
