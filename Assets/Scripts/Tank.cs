@@ -123,6 +123,18 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             }
         }
 
+        // move the crosshair to DELTA units above the tallest object in that space
+        const float MAX_Y_HEIGHT = 10;
+        const float Y_DELTA = 0.1f;
+        RaycastHit hit;
+        Vector3 crosshairAbove =
+            new Vector3(crosshair.transform.position.x, MAX_Y_HEIGHT, crosshair.transform.position.z);
+        if (Physics.Raycast(crosshairAbove, Vector3.down, out hit, MAX_Y_HEIGHT))
+        {
+            crosshair.transform.position = hit.point + Vector3.up * Y_DELTA;
+            crosshair.transform.rotation = Quaternion.LookRotation(hit.normal);
+        }
+
         weapon.LookAt(crosshair.transform.position);
         ultimateWeapon.LookAt(crosshair.transform.position);
     }
@@ -160,7 +172,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
             moveCrosshair = true;
             float x = value.ReadValue<Vector2>().x;
             float y = value.ReadValue<Vector2>().y;
-            moveCrossVal = new Vector3(x, 0, y) * 0.05f;
+            moveCrossVal = new Vector3(x, 0, y) * 0.02f;
         }
         else if (value.phase == InputActionPhase.Canceled)
         {
