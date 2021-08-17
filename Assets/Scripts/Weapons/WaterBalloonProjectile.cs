@@ -20,8 +20,8 @@ public class WaterBalloonProjectile : MonoBehaviour
 
     void OnTriggerEnter(Collider col){
         if(col.tag == "Ground" || col.tag == "Obstacles"){
-            Vector3 newPos = new Vector3(this.transform.position.x, 0.03f, this.transform.position.z);
-            Instantiate(water, newPos, this.transform.rotation);
+            Vector3 newPos = new Vector3(this.transform.position.x, 0.44f, this.transform.position.z);
+            Instantiate(water, newPos, Quaternion.identity);
             this.GetComponent<AudioSource>().PlayOneShot(sfx);
             Destroy(gameObject, sfx.length);
         }

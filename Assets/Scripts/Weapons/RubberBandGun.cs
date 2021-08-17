@@ -25,7 +25,7 @@ public class RubberBandGun : ClippedPrimaryWeapon
 
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(this.transform.forward * _bulletSpeed, ForceMode.Impulse);
-            m_Rigidbody.AddTorque(this.transform.forward * Random.Range(0, 2f), ForceMode.Impulse);
+            // m_Rigidbody.AddTorque(this.transform.forward * Random.Range(0, 2f), ForceMode.Impulse);
             
             base.FireAt(target);
             this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();

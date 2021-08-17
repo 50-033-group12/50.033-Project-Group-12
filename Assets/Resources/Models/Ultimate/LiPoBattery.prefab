@@ -2626,7 +2626,7 @@ GameObject:
   - component: {fileID: 6194443937402506733}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: ChangeColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3289,7 +3289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194443938198813920}
   m_LocalRotation: {x: -0.7052967, y: -0.050562907, z: -0.050562892, w: 0.7052967}
-  m_LocalPosition: {x: -0.495, y: 0.39, z: 0.136}
+  m_LocalPosition: {x: -0.495, y: 0.628, z: 0.136}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 5142468919236634901}

@@ -124,7 +124,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
         }
 
         // move the crosshair to DELTA units above the tallest object in that space
-        const float MAX_Y_HEIGHT = 10;
+        const float MAX_Y_HEIGHT = 25;
         const float Y_DELTA = 0.1f;
         RaycastHit hit;
         Vector3 crosshairAbove =

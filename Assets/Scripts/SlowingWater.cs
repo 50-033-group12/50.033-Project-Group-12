@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,22 +23,32 @@ class SlowWaterDebuff : Debuff<float>
 
 public class SlowingWater : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Dictionary<IDebuffable, SlowWaterDebuff> _activeDebuffs;
+
+    private void Start()
     {
-        
+        _activeDebuffs = new Dictionary<IDebuffable, SlowWaterDebuff>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider col)
     {
-        
+        IDebuffable target = col.gameObject.GetComponentInParent<IDebuffable>();
+        if (target != null && !_activeDebuffs.ContainsKey(target))
+        {
+            var debuff = new SlowWaterDebuff();
+            target.AddDebuff<float>(DebuffableProperties.MOVEMENT_SPEED, debuff);
+            _activeDebuffs.Add(target, debuff);
+        }
     }
 
-    void OnCollisionEnter(Collision col){
-        if(col.gameObject.GetComponent<IDebuffable>() != null){
-            col.gameObject.GetComponent<IDebuffable>().AddDebuff<float>(DebuffableProperties.MOVEMENT_SPEED, new SlowWaterDebuff());
-            Debug.Log("Debuffffeeeeeeeeeeeeeeeed");
+    private void OnTriggerExit(Collider col)
+    {
+        IDebuffable target = col.gameObject.GetComponentInParent<IDebuffable>();
+        if (target != null && _activeDebuffs.ContainsKey(target))
+        {
+            var debuff = _activeDebuffs[target];
+            debuff.Cancel();
+            _activeDebuffs.Remove(target);
         }
     }
 }

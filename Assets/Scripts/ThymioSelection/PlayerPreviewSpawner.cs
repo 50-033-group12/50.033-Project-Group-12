@@ -79,7 +79,7 @@ public class PlayerPreviewSpawner : MonoBehaviour
             mb.enabled = false;
         }
 
-        preview.transform.position = spawnPosition.position;
+        preview.transform.position = spawnPosition.position + Vector3.forward;
         preview.transform.rotation = spawnPosition.rotation;
         preview.name = $"Player {playerId} Preview";
 

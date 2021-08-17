@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0797dafd5a0f449b56ab0f21e11c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotFrom: {fileID: 0}
   damage: 100
 --- !u!54 &915030799231712017
 Rigidbody:
@@ -155,7 +156,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000002
-  m_Height: 2.0000005
+  m_Radius: 0.8222825
+  m_Height: 2.1902213
   m_Direction: 1
-  m_Center: {x: 0.00000005960466, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.32228225, y: 0.01846385, z: -0.000000074505806}

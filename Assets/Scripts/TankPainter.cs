@@ -45,7 +45,11 @@ public class TankPainter : MonoBehaviour
                 Debug.LogWarning("GameObject has changeColor tag but no MeshRenderer: " + o.name);
                 continue;
             }
-        
+
+            foreach (Material m in meshRenderer.materials)
+            {
+                m.color = color;
+            }
             meshRenderer.material.color = color;
             meshRenderer.UpdateGIMaterials();
         }

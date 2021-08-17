@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 class SlowGlueDebuff : Debuff<float>
@@ -22,22 +23,33 @@ class SlowGlueDebuff : Debuff<float>
 
 public class SlowingGlue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private Dictionary<IDebuffable, SlowGlueDebuff> _activeDebuffs;
+
+    private void Start()
     {
-        
+        _activeDebuffs = new Dictionary<IDebuffable, SlowGlueDebuff>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider col)
     {
-        
+        IDebuffable target = col.gameObject.GetComponentInParent<IDebuffable>();
+        if (target != null && !_activeDebuffs.ContainsKey(target))
+        {
+            var debuff = new SlowGlueDebuff();
+            target.AddDebuff<float>(DebuffableProperties.MOVEMENT_SPEED, debuff);
+            _activeDebuffs.Add(target, debuff);
+        }
     }
 
-    void OnCollisionEnter(Collision col){
-        if(col.gameObject.GetComponent<IDebuffable>() != null){
-            col.gameObject.GetComponent<IDebuffable>().AddDebuff<float>(DebuffableProperties.MOVEMENT_SPEED, new SlowGlueDebuff());
-            Debug.Log("Debuffffeeeeed");
+    private void OnTriggerExit(Collider col)
+    {
+        IDebuffable target = col.gameObject.GetComponentInParent<IDebuffable>();
+        if (target != null && _activeDebuffs.ContainsKey(target))
+        {
+            var debuff = _activeDebuffs[target];
+            debuff.Cancel();
+            _activeDebuffs.Remove(target);
         }
     }
 }

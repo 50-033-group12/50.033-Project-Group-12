@@ -19,7 +19,7 @@ public class GlueAmmo : MonoBehaviour
     void OnTriggerEnter(Collider col){
         Debug.Log("Collision behaviour here");
         if(col.tag == "Ground" || col.tag == "Obstacles"){
-            Vector3 newPos = new Vector3(this.transform.position.x, 0.03f, this.transform.position.z);
+            Vector3 newPos = new Vector3(this.transform.position.x, 0.44f, this.transform.position.z);
             Instantiate(glue, newPos, this.transform.rotation);
             this.GetComponent<AudioSource>().PlayOneShot(sfx);
             Destroy(gameObject, sfx.length);
