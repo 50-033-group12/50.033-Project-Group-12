@@ -9,14 +9,14 @@ public class EraserGun : PrimaryWeapon
     
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(ammoSource.GetCount(), 0);
         nextFire = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public Vector3 calcBallisticVelocityVector(Transform source, Transform target, float angle)

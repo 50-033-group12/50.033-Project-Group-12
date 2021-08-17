@@ -65,7 +65,7 @@ public class Tank : MonoBehaviour, IDebuffable, IDamageable
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        ammoSource = new ReplenishableAmmoSource(100);
+        ammoSource = new ReplenishableAmmoSource(99);
         weapon = this.transform.GetComponentInChildren<PrimaryWeapon>();
         secondaryWeapon = this.transform.GetComponentInChildren<SecondaryWeapon>();
         ultimateWeapon = this.transform.GetComponentInChildren<UltimateWeapon>();
