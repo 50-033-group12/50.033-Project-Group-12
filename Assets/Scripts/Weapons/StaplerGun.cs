@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Events;
+using Random = UnityEngine.Random;
 
 public class StaplerGun : ClippedPrimaryWeapon
 {
     public GameObject bullet;
-    public float bulletSpeed = 5f;
+    private float _bulletSpeed = 12f;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,8 @@ public class StaplerGun : ClippedPrimaryWeapon
             bulletShot.GetComponent<StaplerProjectile>().shotFrom = this.transform.parent.Find("Thymio 1/Body").gameObject;
 
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
-            m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
+            m_Rigidbody.AddForce(this.transform.forward * _bulletSpeed, ForceMode.Impulse);
+            m_Rigidbody.AddTorque(this.transform.forward * Random.Range(0, 2f), ForceMode.Impulse);
             
             nextFire = Time.time + GetFireRate();
             base.FireAt(target);

@@ -610,8 +610,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextFire: 0
+  reloadTick: 0
+  reloadTicksNeeded: 90
   bullet: {fileID: 1314169899112505645, guid: 02f3b1ecfad742747a71ae89457d1534, type: 3}
-  bulletSpeed: 7
+  bulletSpeed: 50
 --- !u!1 &4772330702976450261
 GameObject:
   m_ObjectHideFlags: 0
