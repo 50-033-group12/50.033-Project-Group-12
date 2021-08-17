@@ -12,7 +12,7 @@ public abstract class PrimaryWeapon : MonoBehaviour
         ammoSource = source;
     }
 
-    public bool IsReadyToFire(){
+    public virtual bool IsReadyToFire(){
         if(Time.time > nextFire){
             return true;
         }

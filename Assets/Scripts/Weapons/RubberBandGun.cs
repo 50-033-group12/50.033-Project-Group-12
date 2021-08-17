@@ -8,18 +8,6 @@ public class RubberBandGun : ClippedPrimaryWeapon
     public GameObject bullet;
     public float bulletSpeed = 8f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        nextFire = Time.time;
-        Reload();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public override void LookAt(Vector3 target){
         // Determine the target rotation.  This is the rotation if the transform looks at the target point.
@@ -38,7 +26,6 @@ public class RubberBandGun : ClippedPrimaryWeapon
             Rigidbody m_Rigidbody = bulletShot.GetComponent<Rigidbody>();
             m_Rigidbody.AddForce(this.transform.forward * bulletSpeed, ForceMode.Impulse);
             
-            nextFire = Time.time + GetFireRate();
             base.FireAt(target);
             this.GetComponentInParent<PlayerEvents>().firedPrimary.Invoke();
             this.GetComponentInParent<PlayerEvents>().primaryAmmoChanged.Invoke(GetClipRemaining(), ammoSource.GetCount());
