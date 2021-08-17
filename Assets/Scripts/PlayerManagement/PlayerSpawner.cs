@@ -68,7 +68,7 @@ namespace PlayerManagement
         public GameObject SpawnPlayer(int playerId, Tuple<Events.PrimaryWeapon, Events.SecondaryWeapon, Events.UltimateWeapon> loadout)
         {
             // create thymio body
-            var player = Instantiate(_playerContainerPrefab);
+            var player = PlayerInput.Instantiate(_playerContainerPrefab, controlScheme: "Gamepad", pairWithDevice: LoadoutManager.GetPlayerDevice(playerId));
 
             // create primary weapon
             Instantiate(_primaryWeaponPrefabs[loadout.Item1], player.transform);
@@ -97,7 +97,7 @@ namespace PlayerManagement
                 playerEventBus.tickedSecondaryCooldown.AddListener(ui.TickedSecondaryCooldown);
                 playerEventBus.tickedUltimateCooldown.AddListener(ui.TickedUltimateCooldown);
             }
-            return player;
+            return player.gameObject;
         }
     }
 }

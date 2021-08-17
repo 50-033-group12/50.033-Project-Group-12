@@ -57,6 +57,11 @@ public static class LoadoutManager
         return _playerDevices.Keys.ToList();
     }
 
+    public static InputDevice GetPlayerDevice(int playerId)
+    {
+        return _playerDevices[playerId];
+    }
+
     public static void Reset()
     {
         _playerDevices.Clear();
