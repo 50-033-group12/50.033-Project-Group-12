@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1459448787072039757}
   - component: {fileID: 4733301211348483097}
   - component: {fileID: 1664464569438879477}
+  - component: {fileID: -2381426919044573402}
   m_Layer: 6
   m_Name: PlayerContainer
   m_TagString: Player
@@ -246,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c5bece128e36c48b3816979d88ded6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerId: 1
   isMoving: 0
   moveVal: 0
   isRotating: 0
@@ -411,6 +413,18 @@ MonoBehaviour:
   tickedUltimateCooldown:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2381426919044573402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459448787072039792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849e0baeab75d984991e9b65d748c832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1459448786485123886
 PrefabInstance:
   m_ObjectHideFlags: 0

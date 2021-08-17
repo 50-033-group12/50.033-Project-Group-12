@@ -28,6 +28,9 @@ namespace PlayerManagement
                 var player = SpawnPlayer(playerId, playerLoadout);
                 player.transform.position = spawnPositions[i % spawnPositions.Length].transform.position;
                 player.transform.rotation = spawnPositions[i % spawnPositions.Length].transform.rotation;
+                var painter = player.GetComponent<TankPainter>();
+                painter.CloneMaterials();
+                painter.PaintTeamColors(LoadoutManager.GetPlayerColor(playerId));
                 i++;
             }
         }
