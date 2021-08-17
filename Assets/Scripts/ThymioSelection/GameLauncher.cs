@@ -44,7 +44,7 @@ namespace ThymioSelection
                         if (child.gameObject != curtain.gameObject) Destroy(child.gameObject);
                     }
 
-                    SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+                    SceneManager.LoadScene("DeskLevel", LoadSceneMode.Single);
                     curtain.OpenCurtain(() => { Destroy(curtain.transform.parent.gameObject); });
                 });
             }
