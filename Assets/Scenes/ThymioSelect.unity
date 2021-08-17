@@ -682,6 +682,10 @@ PrefabInstance:
       propertyPath: teamColor
       value: 
       objectReference: {fileID: 2100000, guid: d5b0508708f9f0b4fb5526b9a01abbf8, type: 2}
+    - target: {fileID: 5628457134764895889, guid: 6808d85abbdf4b441af1aa34a7fe587e, type: 3}
+      propertyPath: teamColorPalette
+      value: 
+      objectReference: {fileID: 11400000, guid: 51d991c8c8e98484ab8979836ba50905, type: 2}
     - target: {fileID: 5628457134764895892, guid: 6808d85abbdf4b441af1aa34a7fe587e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1954,6 +1958,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -171.229
       objectReference: {fileID: 0}
+    - target: {fileID: 5628457134764895889, guid: 6808d85abbdf4b441af1aa34a7fe587e, type: 3}
+      propertyPath: teamColorPalette
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a026213b2ff9a04c8e7ed1a0e07b90a, type: 2}
     - target: {fileID: 5628457134764895892, guid: 6808d85abbdf4b441af1aa34a7fe587e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
