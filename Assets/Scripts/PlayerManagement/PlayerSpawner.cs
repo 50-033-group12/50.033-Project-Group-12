@@ -100,6 +100,10 @@ namespace PlayerManagement
                 playerEventBus.tickedSecondaryCooldown.AddListener(ui.TickedSecondaryCooldown);
                 playerEventBus.tickedUltimateCooldown.AddListener(ui.TickedUltimateCooldown);
             }
+            else
+            {
+                Debug.LogError("This should not have happened");
+            }
             return player.gameObject;
         }
     }
