@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThymioSelect.unity
     guid: 0844df533864f3d4ebe62cc2afb3a0d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/DeskLevel.unity
+    guid: d2081c13c78c51b4986bb8dd653e431a
   m_configObjects: {}
